@@ -55,17 +55,17 @@ struct SplashView: View {
 //3.
 extension SplashView {
     func loadingView(userName: String) -> some View {
-        ZStack {
+        VStack {
             Image("logo")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .background(Color("backgroundColor"))
                 .ignoresSafeArea()
-            HStack {
                 Text("Habit Monkey \(userName)")
                     .foregroundColor(Color.white)
-            }
+                    .background(Color("backgroundColor"))
+                    .ignoresSafeArea()
         }
     }
 }
