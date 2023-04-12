@@ -23,36 +23,7 @@ struct SplashView: View {
         }
     }
 }
-//1.
-//struct LoadingView: View {
-//    var body: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                .background(Color("backgroundColor"))
-//                .ignoresSafeArea()
-//        }
-//    }
-//}
 
-//2.
-//extension SplashView {
-//    var loading: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                .background(Color("backgroundColor"))
-//                .ignoresSafeArea()
-//        }
-//
-//    }
-//}
-
-//3.
 extension SplashView {
     func loadingView(error: String? = nil) -> some View {
         ZStack {
