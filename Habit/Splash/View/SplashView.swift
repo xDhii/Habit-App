@@ -8,51 +8,24 @@
 import SwiftUI
 
 struct SplashView: View {
-    @State var state: SplashUIState = .loading
+    @ObservedObject var viewModel: SplashViewModel
 
     var body: some View {
-        switch state {
-        case .loading:
-            loadingView()
-        case .goToSignInScreen:
-            Text("Carregar tela de login")
-        case .goToHomeScreen:
-            Text("Carregar tela principal")
-        case let .error(errorMessage):
-            loadingView(error: errorMessage)
-        }
+        Group {
+            switch viewModel.uiState {
+            case .loading:
+                loadingView()
+            case .goToSignInScreen:
+                Text("Carregar tela de login")
+            case .goToHomeScreen:
+                Text("Carregar tela principal")
+            case let .error(errorMessage):
+                loadingView(error: errorMessage)
+            }
+        }.onAppear(perform: viewModel.onAppear)
     }
 }
-//1.
-//struct LoadingView: View {
-//    var body: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                .background(Color("backgroundColor"))
-//                .ignoresSafeArea()
-//        }
-//    }
-//}
 
-//2.
-//extension SplashView {
-//    var loading: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                .background(Color("backgroundColor"))
-//                .ignoresSafeArea()
-//        }
-//
-//    }
-//}
-
-//3.
 extension SplashView {
     func loadingView(error: String? = nil) -> some View {
         ZStack {
@@ -62,12 +35,12 @@ extension SplashView {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .background(Color("backgroundColor"))
                 .ignoresSafeArea()
-                
+
             if let error = error {
                 Text("")
                     .alert(isPresented: .constant(true)) {
                         Alert(title: Text("Habit"), message: Text(error), dismissButton: .default(Text("Ok")) {
-                            //Do something
+                            // Do something
                         })
                     }
             }
@@ -77,9 +50,7 @@ extension SplashView {
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView(state:
-                .error("Teste de erro no servidor.")
-//                .loading
-        )
+        let viewModel = SplashViewModel()
+        SplashView(viewModel: viewModel)
     }
 }
