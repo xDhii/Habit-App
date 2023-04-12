@@ -13,13 +13,13 @@ struct SplashView: View {
     var body: some View {
         switch state {
         case .loading:
-            loadingView(userName: "Adriano")
+            loadingView()
         case .goToSignInScreen:
             Text("Carregar tela de login")
         case .goToHomeScreen:
             Text("Carregar tela principal")
-        case let .error(msg):
-            Text("Mostrar erro: \(msg)")
+        case let .error(errorMessage):
+            loadingView(error: errorMessage)
         }
     }
 }
@@ -54,24 +54,32 @@ struct SplashView: View {
 
 //3.
 extension SplashView {
-    func loadingView(userName: String) -> some View {
-        VStack {
+    func loadingView(error: String? = nil) -> some View {
+        ZStack {
             Image("logo")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .background(Color("backgroundColor"))
                 .ignoresSafeArea()
-                Text("Habit Monkey \(userName)")
-                    .foregroundColor(Color.white)
-                    .background(Color("backgroundColor"))
-                    .ignoresSafeArea()
+                
+            if let error = error {
+                Text("")
+                    .alert(isPresented: .constant(true)) {
+                        Alert(title: Text("Habit"), message: Text(error), dismissButton: .default(Text("Ok")) {
+                            //Do something
+                        })
+                    }
+            }
         }
     }
 }
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        SplashView(state:
+                .error("Teste de erro no servidor.")
+//                .loading
+        )
     }
 }
