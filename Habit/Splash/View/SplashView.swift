@@ -22,9 +22,7 @@ struct SplashView: View {
             case let .error(errorMessage):
                 loadingView(error: errorMessage)
             }
-        }.onAppear(perform: {
-            viewModel.onAppear()
-        })
+        }.onAppear(perform: viewModel.onAppear)
     }
 }
 
