@@ -14,7 +14,7 @@
 		BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377DC29E4E6F300E88A7E /* SplashUIState.swift */; };
 		BCF377E029E638C800E88A7E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377DF29E638C800E88A7E /* SplashViewModel.swift */; };
 		BCF377F329E8B2C500E88A7E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377F229E8B2C500E88A7E /* SignInViewModel.swift */; };
-		BCF377F529E8B2CE00E88A7E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377F429E8B2CE00E88A7E /* SignInModel.swift */; };
+		BCF377F529E8B2CE00E88A7E /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377F429E8B2CE00E88A7E /* SignInUIState.swift */; };
 		BCF377F729E8B2D900E88A7E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377F629E8B2D900E88A7E /* SignInView.swift */; };
 		BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377F829E8B6E300E88A7E /* SplashViewRouter.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 		BCF377DC29E4E6F300E88A7E /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		BCF377DF29E638C800E88A7E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		BCF377F229E8B2C500E88A7E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		BCF377F429E8B2CE00E88A7E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		BCF377F429E8B2CE00E88A7E /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		BCF377F629E8B2D900E88A7E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF377F829E8B6E300E88A7E /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		BCF377F029E8B29B00E88A7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BCF377F429E8B2CE00E88A7E /* SignInModel.swift */,
+				BCF377F429E8B2CE00E88A7E /* SignInUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				BCF377DB29E4E63F00E88A7E /* SplashView.swift in Sources */,
 				BCF377E029E638C800E88A7E /* SplashViewModel.swift in Sources */,
 				BCF377F329E8B2C500E88A7E /* SignInViewModel.swift in Sources */,
-				BCF377F529E8B2CE00E88A7E /* SignInModel.swift in Sources */,
+				BCF377F529E8B2CE00E88A7E /* SignInUIState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
