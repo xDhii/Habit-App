@@ -16,22 +16,26 @@ struct SignUpView: View {
     @State var birthday = ""
 
     var body: some View {
-        VStack(alignment: .center) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Cadastro")
-                    .foregroundColor(Color.black)
-                    .font(Font.system(.title).bold())
-                    .padding(.bottom, 8)
+        ZStack {
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .center) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Cadastro")
+                            .foregroundColor(Color.black)
+                            .font(Font.system(.title).bold())
+                            .padding(.bottom, 8)
 
-                fullNameField
-                emailField
-                passwordField
-                documentField
-                phoneField
-                birthdayField
-                saveButton
-            }
-            Spacer()
+                        fullNameField
+                        emailField
+                        passwordField
+                        documentField
+                        phoneField
+                        birthdayField
+                        saveButton
+                    }
+                    Spacer()
+                }.padding(.horizontal, 8)
+            }.padding()
         }
     }
 }
