@@ -18,7 +18,7 @@ struct SignInView: View {
     var body: some View {
         ZStack {
             if case SignInUIState.goToHomeScreen = viewModel.uiState {
-                Text("tela principal")
+                viewModel.homeView()
             } else {
                 NavigationView {
                     ScrollView(showsIndicators: true) {
@@ -35,11 +35,20 @@ struct SignInView: View {
                                     .font(Font.system(.title).bold())
                                     .padding(.bottom, 8)
 
-                                numberField
+                                emailField
                                 passwordField
                                 enterButton
                                 registerLink
                             }
+                        }
+
+                        if case let SignInUIState.error(value) = viewModel.uiState {
+                            Text("")
+                                .alert(isPresented: .constant(true)) {
+                                    Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
+                                        // Do something
+                                    })
+                                }
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,7 +63,7 @@ struct SignInView: View {
 }
 
 extension SignInView {
-    var numberField: some View {
+    var emailField: some View {
         TextField("", text: $email)
             .border(Color.black)
     }
