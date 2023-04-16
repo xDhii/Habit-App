@@ -21,7 +21,7 @@ struct SignUpView: View {
                 VStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Cadastro")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color("primaryTitle"))
                             .font(Font.system(.title).bold())
                             .padding(.bottom, 8)
 
@@ -43,42 +43,42 @@ struct SignUpView: View {
 extension SignUpView {
     var fullNameField: some View {
         TextField("", text: $fullName)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignUpView {
     var emailField: some View {
         TextField("", text: $email)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
         SecureField("", text: $password)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignUpView {
     var documentField: some View {
         TextField("", text: $document)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
         TextField("", text: $phone)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
         TextField("", text: $birthday)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 

@@ -33,7 +33,7 @@ extension SplashView {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .background(Color("backgroundColor"))
+                .background(Color("primaryBackgroundColor"))
                 .ignoresSafeArea()
 
             if let error = error {
