@@ -31,7 +31,7 @@ struct SignInView: View {
                                     .padding(.horizontal, 48)
 
                                 Text("Login")
-                                    .foregroundColor(.orange)
+                                    .foregroundColor(Color("primaryTitle"))
                                     .font(Font.system(.title).bold())
                                     .padding(.bottom, 8)
 
@@ -53,7 +53,7 @@ struct SignInView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 32)
-                    .background(Color.white)
+                    .background(Color("primaryBackgroundColor"))
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(navigationHidden)
                 }
@@ -65,14 +65,14 @@ struct SignInView: View {
 extension SignInView {
     var emailField: some View {
         TextField("", text: $email)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
 extension SignInView {
     var passwordField: some View {
         SecureField("", text: $password)
-            .border(Color.black)
+            .border(Color("borderColor"))
     }
 }
 
