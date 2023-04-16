@@ -10,7 +10,6 @@ import SwiftUI
 struct SplashView: View {
     @ObservedObject var viewModel: SplashViewModel
 
-    
     var body: some View {
         Group {
             switch viewModel.uiState {
