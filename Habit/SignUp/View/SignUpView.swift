@@ -14,6 +14,7 @@ struct SignUpView: View {
     @State var document = ""
     @State var phone = ""
     @State var birthday = ""
+    @State var gender = Gender.male
 
     var body: some View {
         ZStack {
@@ -31,6 +32,7 @@ struct SignUpView: View {
                         documentField
                         phoneField
                         birthdayField
+                        genderField
                         saveButton
                     }
                     Spacer()
@@ -79,6 +81,19 @@ extension SignUpView {
     var birthdayField: some View {
         TextField("", text: $birthday)
             .border(Color("borderColor"))
+    }
+}
+
+extension SignUpView {
+    var genderField: some View {
+        Picker("Gender", selection: $gender) {
+            ForEach(Gender.allCases, id: \.self) { value in
+                Text(value.rawValue)
+                    .tag(value)
+            }
+        }.pickerStyle(SegmentedPickerStyle())
+            .padding(.top, 16)
+            .padding(.bottom, 32)
     }
 }
 
