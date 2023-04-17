@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349A29EDCB6600AA3AF9 /* Gender.swift */; };
 		BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */; };
 		BCB4F02E29EB702D009FCD5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02D29EB702D009FCD5C /* HomeView.swift */; };
 		BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02F29EB7037009FCD5C /* HomeViewModel.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC16349A29EDCB6600AA3AF9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		BCB4F02D29EB702D009FCD5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BCB4F02F29EB7037009FCD5C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -52,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC16349829EDCB5100AA3AF9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BC16349929EDCB5900AA3AF9 /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BC16349929EDCB5900AA3AF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC16349A29EDCB6600AA3AF9 /* Gender.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BCB4F02929EB6FF9009FCD5C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +154,7 @@
 		BCF377C829E4E47700E88A7E /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				BC16349829EDCB5100AA3AF9 /* Common */,
 				BCB4F03129EB77C8009FCD5C /* SignUp */,
 				BCB4F02929EB6FF9009FCD5C /* Home */,
 				BCF377EE29E8AD3F00E88A7E /* SignIn */,
@@ -303,6 +322,7 @@
 				BCB4F02E29EB702D009FCD5C /* HomeView.swift in Sources */,
 				BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */,
 				BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */,
+				BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */,
 				BCF377DB29E4E63F00E88A7E /* SplashView.swift in Sources */,
 				BCF377E029E638C800E88A7E /* SplashViewModel.swift in Sources */,
 				BCF377F329E8B2C500E88A7E /* SignInViewModel.swift in Sources */,
