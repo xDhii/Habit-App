@@ -5,7 +5,6 @@
 //  Created by Adriano Valumin on 11/04/23.
 //
 
-// import Foundation
 import SwiftUI
 
 class SplashViewModel: ObservableObject {

@@ -5,6 +5,7 @@
 //  Created by Adriano Valumin on 15/04/23.
 //
 
+import Combine
 import SwiftUI
 
 enum SignInViewRouter {
@@ -13,8 +14,9 @@ enum SignInViewRouter {
         return HomeView(viewModel: viewModel)
     }
 
-    static func makeSignUpView() -> some View {
+    static func makeSignUpView(publisher: PassthroughSubject<Bool, Never>) -> some View {
         let viewModel = SignUpViewModel()
+        viewModel.publisher = publisher
         return SignUpView(viewModel: viewModel)
     }
 }
