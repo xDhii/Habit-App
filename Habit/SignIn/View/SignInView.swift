@@ -64,8 +64,11 @@ struct SignInView: View {
 
 extension SignInView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color("borderColor"))
+        EditTextView(text: $email,
+                     placeholder: "E-mail",
+                     keyboard: .emailAddress,
+                     error: "E-mail inválido",
+                     failure: email.count < 5)
     }
 }
 
