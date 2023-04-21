@@ -68,7 +68,7 @@ extension SignInView {
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: email.count < 5)
+                     failure: !email.isEmail())
     }
 }
 
