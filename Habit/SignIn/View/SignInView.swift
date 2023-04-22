@@ -85,9 +85,17 @@ extension SignInView {
 
 extension SignInView {
     var enterButton: some View {
-        Button("Entrar") {
-            viewModel.login(email: email, password: password)
-        }
+//        Button("Entrar") {
+//            viewModel.login(email: email, password: password)
+//        }
+        LoadingButtonView(action: {
+                              viewModel.login(email: email, password: password)
+
+                          },
+                          text: "Entrar",
+                          disabled: !email.isEmail() || password.count < 8,
+                          showProgress: self.viewModel.uiState == SignInUIState.loading
+        )
     }
 }
 

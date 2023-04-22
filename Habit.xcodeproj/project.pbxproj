@@ -14,6 +14,7 @@
 		BCA92D8829F20E87006903DB /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8729F20E87006903DB /* EditTextView.swift */; };
 		BCA92D8B29F2189B006903DB /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8A29F2189B006903DB /* CustomTextFieldStyle.swift */; };
 		BCA92D8E29F32C29006903DB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8D29F32C29006903DB /* String+Extension.swift */; };
+		BCA92D9029F33023006903DB /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8F29F33023006903DB /* LoadingButtonView.swift */; };
 		BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */; };
 		BCB4F02E29EB702D009FCD5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02D29EB702D009FCD5C /* HomeView.swift */; };
 		BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02F29EB7037009FCD5C /* HomeViewModel.swift */; };
@@ -38,6 +39,7 @@
 		BCA92D8729F20E87006903DB /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		BCA92D8A29F2189B006903DB /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		BCA92D8D29F32C29006903DB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BCA92D8F29F33023006903DB /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		BCB4F02D29EB702D009FCD5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BCB4F02F29EB7037009FCD5C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				BCA92D8929F21880006903DB /* Style */,
 				BCA92D8729F20E87006903DB /* EditTextView.swift */,
+				BCA92D8F29F33023006903DB /* LoadingButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */,
+				BCA92D9029F33023006903DB /* LoadingButtonView.swift in Sources */,
 				BCA92D8E29F32C29006903DB /* String+Extension.swift in Sources */,
 				BCA92D8529EE1BE2006903DB /* SignUpViewRouter.swift in Sources */,
 				BCF377F729E8B2D900E88A7E /* SignInView.swift in Sources */,
