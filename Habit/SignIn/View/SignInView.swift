@@ -68,22 +68,34 @@ extension SignInView {
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: email.count < 5)
+                     failure: !email.isEmail())
     }
 }
 
 extension SignInView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color("borderColor"))
+        EditTextView(text: $password,
+                     placeholder: "Senha",
+                     keyboard: .default,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.count < 8,
+                     isSecure: true)
     }
 }
 
 extension SignInView {
     var enterButton: some View {
-        Button("Entrar") {
-            viewModel.login(email: email, password: password)
-        }
+//        Button("Entrar") {
+//            viewModel.login(email: email, password: password)
+//        }
+        LoadingButtonView(action: {
+                              viewModel.login(email: email, password: password)
+
+                          },
+                          text: "Entrar",
+                          disabled: !email.isEmail() || password.count < 8,
+                          showProgress: self.viewModel.uiState == SignInUIState.loading
+        )
     }
 }
 
