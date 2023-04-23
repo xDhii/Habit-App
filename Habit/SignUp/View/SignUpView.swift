@@ -127,8 +127,6 @@ extension SignUpView {
 
 extension SignUpView {
     var saveButton: some View {
-//        Button("Realizar Cadastro") {
-//            viewModel.signUp()
         LoadingButtonView(action: {
                               viewModel.signUp()
                           },
