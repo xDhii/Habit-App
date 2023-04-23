@@ -9,6 +9,9 @@ import Combine
 import SwiftUI
 
 class SignInViewModel: ObservableObject {
+    @Published var email = ""
+    @Published var password = ""
+
     private var cancellable: AnyCancellable?
 
     private let publisher = PassthroughSubject<Bool, Never>()
@@ -29,7 +32,7 @@ class SignInViewModel: ObservableObject {
         cancellable?.cancel()
     }
 
-    func login(email: String, password: String) {
+    func login() {
         uiState = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.uiState = .goToHomeScreen
