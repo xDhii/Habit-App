@@ -85,9 +85,6 @@ extension SignInView {
 
 extension SignInView {
     var enterButton: some View {
-//        Button("Entrar") {
-//            viewModel.login(email: email, password: password)
-//        }
         LoadingButtonView(action: {
                               viewModel.login(email: email, password: password)
 

@@ -53,43 +53,62 @@ struct SignUpView: View {
 
 extension SignUpView {
     var fullNameField: some View {
-        TextField("", text: $fullName)
-            .border(Color("borderCRelizarolor"))
+        EditTextView(text: $fullName,
+                     placeholder: "Nome Completo",
+                     keyboard: .alphabet,
+                     error: "Digite seu nome completo",
+                     failure: fullName.count < 3)
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color("borderColor"))
+        EditTextView(text: $email,
+                     placeholder: "E-mail",
+                     keyboard: .emailAddress,
+                     error: "E-mail inválido",
+                     failure: !email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color("borderColor"))
+        EditTextView(text: $password,
+                     placeholder: "Senha",
+                     keyboard: .default,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.count < 8,
+                     isSecure: true)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField("", text: $document)
-            .border(Color("borderColor"))
+        EditTextView(text: $document,
+                     placeholder: "CPF",
+                     keyboard: .numberPad,
+                     error: "CPF inválido",
+                     failure: document.count != 11)
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-            .border(Color("borderColor"))
+        EditTextView(text: $phone,
+                     placeholder: "Celular",
+                     keyboard: .numberPad,
+                     error: "Digite seu telefone com DDD",
+                     failure: phone.count < 10 || phone.count >= 12)
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-            .border(Color("borderColor"))
+        EditTextView(text: $birthday,
+                     placeholder: "Data de Nascimento",
+                     keyboard: .default,
+                     error: "Data de nascimento deve ser no formado dd/MM/yyyy",
+                     failure: birthday.count != 10)
     }
 }
 
@@ -108,9 +127,20 @@ extension SignUpView {
 
 extension SignUpView {
     var saveButton: some View {
-        Button("Realizar Cadastro") {
-            viewModel.signUp()
-        }
+//        Button("Realizar Cadastro") {
+//            viewModel.signUp()
+        LoadingButtonView(action: {
+                              viewModel.signUp()
+                          },
+                          text: "Realizar Cadastro",
+                          disabled: !email.isEmail() ||
+                              password.count < 8 ||
+                              fullName.count < 3 ||
+                              document.count != 11 ||
+                              phone.count < 10 || phone.count >= 12 ||
+                              birthday.count != 10,
+                          showProgress: self.viewModel.uiState == SignUpUIState.loading
+        )
     }
 }
 
