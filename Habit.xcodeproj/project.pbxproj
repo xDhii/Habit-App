@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349A29EDCB6600AA3AF9 /* Gender.swift */; };
 		BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */; };
+		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BCA92D8229EE1B5E006903DB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */; };
 		BCA92D8529EE1BE2006903DB /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */; };
 		BCA92D8829F20E87006903DB /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8729F20E87006903DB /* EditTextView.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		BC16349A29EDCB6600AA3AF9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
+		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		BCA92D8729F20E87006903DB /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		BC16349829EDCB5100AA3AF9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BC83E8D329FDD6EA0099129F /* Network */,
 				BCA92D8C29F32BF5006903DB /* Lang */,
 				BCA92D8629F20E70006903DB /* View */,
 				BC16349929EDCB5900AA3AF9 /* Model */,
@@ -84,6 +87,14 @@
 				BC16349A29EDCB6600AA3AF9 /* Gender.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BC83E8D329FDD6EA0099129F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BC83E8D429FDD70B0099129F /* WebService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BCA92D8629F20E70006903DB /* View */ = {
@@ -368,6 +379,7 @@
 				BCF377F729E8B2D900E88A7E /* SignInView.swift in Sources */,
 				BCB4F03629EB7809009FCD5C /* SignUpView.swift in Sources */,
 				BCB4F02E29EB702D009FCD5C /* HomeView.swift in Sources */,
+				BC83E8D529FDD70B0099129F /* WebService.swift in Sources */,
 				BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */,
 				BCA92D8229EE1B5E006903DB /* SignUpViewModel.swift in Sources */,
 				BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */,
