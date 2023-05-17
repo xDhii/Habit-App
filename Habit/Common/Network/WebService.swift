@@ -84,6 +84,7 @@ enum WebService {
                 }
                 break
             case let .success(data):
+                completion(true, nil)
                 print(String(data: data, encoding: .utf8))
                 break
             }
