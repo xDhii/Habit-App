@@ -34,7 +34,6 @@ enum WebService {
     private static func call<T: Encodable>(path: Endpoint,
                                            body: T,
                                            completion: @escaping (Result) -> Void) {
-                                               
         guard var urlRequest = completeUrl(path: path) else {
             return
         }
@@ -52,16 +51,16 @@ enum WebService {
                 completion(.failure(.internalServerError, nil))
                 return
             }
-            
+
             if let r = response as? HTTPURLResponse {
                 switch r.statusCode {
-                    case 400:
-                        completion(.failure(.badRequest, data))
-                        break
-                    case 200:
-                        completion(.success(data))
-                    default:
-                        break
+                case 400:
+                    completion(.failure(.badRequest, data))
+                    break
+                case 200:
+                    completion(.success(data))
+                default:
+                    break
                 }
             }
 
@@ -75,14 +74,19 @@ enum WebService {
     static func postUser(request: SignUpRequest) {
         call(path: .postUser, body: request, completion: { result in
             switch result {
-                case .failure(let error, let data):
+            case let .failure(error, data):
                 if let data = data {
-                    print(String(data: data, encoding: .utf8))
+                    if error == .badRequest {
+                        print(String(data: data, encoding: .utf8))
+                        let decoder = JSONDecoder()
+                        let response = try? decoder.decode(SignUpResponse.self, from: data)
+                        print(response?.detail)
+                    }
                 }
-                    break
-                case .success(let data):
-                    print(String(data: data, encoding: .utf8))
-                    break
+                break
+            case let .success(data):
+                print(String(data: data, encoding: .utf8))
+                break
             }
         })
     }
