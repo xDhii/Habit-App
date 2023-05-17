@@ -11,6 +11,7 @@
 		BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
+		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
 		BCA92D8229EE1B5E006903DB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */; };
 		BCA92D8529EE1BE2006903DB /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */; };
 		BCA92D8829F20E87006903DB /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8729F20E87006903DB /* EditTextView.swift */; };
@@ -38,6 +39,7 @@
 		BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		BCA92D8729F20E87006903DB /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */,
 				BC83E8D629FDE4700099129F /* SignUpRequest.swift */,
+				BC866EDC2A15890200A36986 /* SignUpResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */,
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */,
