@@ -34,8 +34,21 @@ class SignInViewModel: ObservableObject {
 
     func login() {
         uiState = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.uiState = .goToHomeScreen
+        
+        WebService.login(request: SignInRequest(email: email, password: password)) { (successResponse, errorResponse) in
+            
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+                }
+            }
+            
+            if let success = successResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .goToHomeScreen
+                }
+            }
+            
         }
     }
 }
