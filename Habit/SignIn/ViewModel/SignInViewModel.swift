@@ -15,7 +15,7 @@ class SignInViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
 
     private let publisher = PassthroughSubject<Bool, Never>()
-    
+
     private let interactor: SignInInteractor
 
     @Published var uiState: SignInUIState = .none
@@ -37,21 +37,20 @@ class SignInViewModel: ObservableObject {
 
     func login() {
         uiState = .loading
-        
-        interactor.login(loginRequest: SignInRequest(email: email, password: password)) { (successResponse, errorResponse) in
-            
+
+        interactor.login(loginRequest: SignInRequest(email: email, password: password)) { successResponse, errorResponse in
+
             if let error = errorResponse {
                 DispatchQueue.main.async {
                     self.uiState = .error(error.detail.message)
                 }
             }
-            
+
             if successResponse != nil {
                 DispatchQueue.main.async {
                     self.uiState = .goToHomeScreen
                 }
             }
-            
         }
     }
 }
