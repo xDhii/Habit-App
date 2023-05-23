@@ -52,7 +52,7 @@ class SignUpViewModel: ObservableObject {
                 }
             }
             
-            if let success = successResponse {
+            if successResponse != nil {
                 
                 WebService.login(request: SignInRequest(email: self.email, password: self.password)) { (successResponse, errorResponse) in
                     
@@ -62,7 +62,7 @@ class SignUpViewModel: ObservableObject {
                         }
                     }
                     
-                    if let successSignIn = successResponse {
+                    if successResponse != nil {
                         DispatchQueue.main.async {
                             self.publisher.send(true)
                             

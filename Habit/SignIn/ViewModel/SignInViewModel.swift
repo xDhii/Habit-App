@@ -43,7 +43,7 @@ class SignInViewModel: ObservableObject {
                 }
             }
             
-            if let success = successResponse {
+            if successResponse != nil {
                 DispatchQueue.main.async {
                     self.uiState = .goToHomeScreen
                 }

@@ -114,7 +114,7 @@ enum WebService {
                     }
                 }
                 break
-            case let .success(data):
+            case .success(_):
                 completion(true, nil)
                 break
             }
