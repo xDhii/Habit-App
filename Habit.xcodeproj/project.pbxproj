@@ -11,6 +11,7 @@
 		BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */; };
 		BC4C807C2A1D78DF00CBB9FF /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807B2A1D78DF00CBB9FF /* SignInInteractor.swift */; };
 		BC4C807E2A1D7B4500CBB9FF /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807D2A1D7B4500CBB9FF /* RemoteDataSource.swift */; };
+		BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807F2A1ECD6500CBB9FF /* AppError.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
@@ -45,6 +46,7 @@
 		BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		BC4C807B2A1D78DF00CBB9FF /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		BC4C807D2A1D7B4500CBB9FF /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		BC4C807F2A1ECD6500CBB9FF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				BC16349A29EDCB6600AA3AF9 /* Gender.swift */,
 				BC866EDE2A158DAB00A36986 /* ErrorResponse.swift */,
+				BC4C807F2A1ECD6500CBB9FF /* AppError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */,
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
+				BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BC4C807E2A1D7B4500CBB9FF /* RemoteDataSource.swift in Sources */,
 				BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */,

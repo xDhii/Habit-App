@@ -5,15 +5,15 @@
 //  Created by Adriano Valumin on 23/05/23.
 //
 
+import Combine
 import Foundation
 
 class SignInInteractor {
     private let remote: RemoteDataSource = .shared
-//    private let local LocalDataSource
 }
 
 extension SignInInteractor {
-    func login(loginRequest request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
-        remote.login(request: request, completion: completion)
+    func login(loginRequest request: SignInRequest) -> Future<SignInResponse, AppError> {
+        return remote.login(request: request)
     }
 }

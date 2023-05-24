@@ -38,7 +38,6 @@ struct LoadingButtonView: View {
 struct LoadingButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingButtonView(action: {
-            print("Hello")
         }, text: "Entrar",
         disabled: false,
         showProgress: false)
