@@ -44,7 +44,6 @@ struct SignInView: View {
                             Text("")
                                 .alert(isPresented: .constant(true)) {
                                     Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
-                                        // Do something
                                     })
                                 }
                         }

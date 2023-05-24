@@ -26,7 +26,6 @@ class RemoteDataSource {
                         if error == .unauthorized {
                             let decoder = JSONDecoder()
                             let response = try? decoder.decode(SignInErrorResponse.self, from: data)
-//                            completion(nil, response)
                             promise(.failure(AppError.response(message: response?.detail.message ?? "Unknown Error")))
                         }
                     }
@@ -34,7 +33,6 @@ class RemoteDataSource {
                 case let .success(data):
                     let decoder = JSONDecoder()
                     let response = try? decoder.decode(SignInResponse.self, from: data)
-//                    completion(response, nil)
                     guard let response = response else {
                         return
                     }

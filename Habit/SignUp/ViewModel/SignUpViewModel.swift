@@ -53,23 +53,6 @@ class SignUpViewModel: ObservableObject {
             }
 
             if successResponse != nil {
-//                WebService.login(request: SignInRequest(email: self.email, password: self.password)) { (successResponse, errorResponse) in
-//
-//                    if let errorSignIn = errorResponse {
-//                        DispatchQueue.main.async {
-//                            self.uiState = .error(errorSignIn.detail.message)
-//                        }
-//                    }
-//
-//                    if successResponse != nil {
-//                        DispatchQueue.main.async {
-//                            self.publisher.send(true)
-//
-//                                self.uiState = .success
-//                          }
-//                    }
-//
-//                }
             }
         }
     }

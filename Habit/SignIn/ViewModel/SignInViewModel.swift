@@ -36,20 +36,20 @@ class SignInViewModel: ObservableObject {
 
     func login() {
         uiState = .loading
-        
+
         cancellableRequest = interactor.login(loginRequest: SignInRequest(email: email, password: password))
             .receive(on: DispatchQueue.main)
             .sink { completion in
-                
-                switch(completion) {
-                case .failure(let appError):
+
+                switch completion {
+                case let .failure(appError):
                     self.uiState = SignInUIState.error(appError.message)
                     break
                 case .finished:
                     break
                 }
-                //
-            } receiveValue: { success in
+
+            } receiveValue: { _ in
                 self.uiState = .goToHomeScreen
             }
     }
