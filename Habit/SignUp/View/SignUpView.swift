@@ -31,6 +31,7 @@ struct SignUpView: View {
                     }
                     Spacer()
                 }.padding(.horizontal, 8)
+
             }.padding()
 
             if case let SignUpUIState.error(value) = viewModel.uiState {
