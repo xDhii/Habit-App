@@ -19,7 +19,21 @@ class SignUpViewModel: ObservableObject {
 
     var publisher: PassthroughSubject<Bool, Never>!
 
+    private var cancellableSignUp: AnyCancellable?
+    private var cancellableSignIn: AnyCancellable?
+
     @Published var uiState: SignUpUIState = .none
+
+    private let interactor: SignUpInteractor
+
+    init(interactor: SignUpInteractor) {
+        self.interactor = interactor
+    }
+
+    deinit {
+        cancellableSignIn?.cancel()
+        cancellableSignUp?.cancel()
+    }
 
     func signUp() {
         uiState = .loading
@@ -38,23 +52,43 @@ class SignUpViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
 
         let birthday = formatter.string(from: dateFormated)
+        let signUpRequest = SignUpRequest(fullName: fullName,
+                                          email: email,
+                                          password: password,
+                                          document: document,
+                                          phone: phone,
+                                          birthday: birthday,
+                                          gender: gender.index)
 
-        WebService.postUser(request: SignUpRequest(fullName: fullName,
-                                                   email: email,
-                                                   password: password,
-                                                   document: document,
-                                                   phone: phone,
-                                                   birthday: birthday,
-                                                   gender: gender.index)) { successResponse, errorResponse in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail)
+        cancellableSignUp = interactor.postUser(signUpRequest: signUpRequest)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case let .failure(appError):
+                    self.uiState = .error(appError.message)
+                    break
+                case .finished:
+                    break
+                }
+            } receiveValue: { created in
+
+                if created {
+                    self.cancellableSignIn = self.interactor.login(signInRequest: SignInRequest(email: self.email, password: self.password))
+                        .receive(on: DispatchQueue.main)
+                        .sink { completion in
+                            switch completion {
+                            case let .failure(appError):
+                                self.uiState = .error(appError.message)
+                                break
+                            case .finished:
+                                break
+                            }
+                        } receiveValue: { _ in
+                            self.publisher.send(created)
+                            self.uiState = .success
+                        }
                 }
             }
-
-            if successResponse != nil {
-            }
-        }
     }
 }
 
