@@ -137,6 +137,6 @@ extension SignUpView {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(viewModel: SignUpViewModel())
+        SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
     }
 }

@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 class SignInInteractor {
-    private let remote: RemoteDataSource = .shared
+    private let remote: SignInRemoteDataSource = .shared
 }
 
 extension SignInInteractor {
