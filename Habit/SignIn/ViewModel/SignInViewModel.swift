@@ -49,7 +49,13 @@ class SignInViewModel: ObservableObject {
                     break
                 }
 
-            } receiveValue: { _ in
+            } receiveValue: { success in
+                let auth = UserAuth(idToken: success.accessToken,
+                                    refreshToken: success.refreshToken,
+                                    expires: success.expires,
+                                    tokenType: success.tokenType)
+
+                self.interactor.insertAuth(userAuth: auth)
                 self.uiState = .goToHomeScreen
             }
     }
