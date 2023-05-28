@@ -16,7 +16,9 @@ class SignUpRemoteDataSource {
 
     func postUser(request: SignUpRequest) -> Future<Bool, AppError> {
         return Future { promise in
-            WebService.call(path: .postUser, body: request) { result in
+            WebService.call(path: .postUser,
+                            method: .post,
+                            body: request) { result in
                 switch result {
                 case let .failure(error, data):
                     if let data = data {
