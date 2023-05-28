@@ -16,6 +16,7 @@
 		BC4C80852A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C80842A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift */; };
 		BC4C80872A200B1400CBB9FF /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C80862A200B1400CBB9FF /* UserAuth.swift */; };
 		BC4C80892A200C7200CBB9FF /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */; };
+		BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
@@ -55,6 +56,7 @@
 		BC4C80842A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSource.swift; sourceTree = "<group>"; };
 		BC4C80862A200B1400CBB9FF /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			children = (
 				BC4C80822A1ED9CF00CBB9FF /* SignUpInteractor.swift */,
 				BC4C80842A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BC4C808A2A23C41000CBB9FF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -284,6 +294,7 @@
 		BCF377D729E4E5C000E88A7E /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				BC4C808A2A23C41000CBB9FF /* Interactor */,
 				BCF377D829E4E5EB00E88A7E /* View */,
 				BCF377DE29E6387600E88A7E /* ViewModel */,
 				BCF377D929E4E5FD00E88A7E /* Model */,
@@ -447,6 +458,7 @@
 				BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */,
 				BCA92D8229EE1B5E006903DB /* SignUpViewModel.swift in Sources */,
 				BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */,
+				BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */,
 				BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */,
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
 				BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */,
