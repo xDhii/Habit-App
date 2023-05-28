@@ -34,23 +34,23 @@ class SplashViewModel: ObservableObject {
                     self.cancellableRefresh = self.interactor.refreshToken(refreshRequest: request)
                         .receive(on: DispatchQueue.main)
                         .sink(receiveCompletion: { completion in
-                            switch(completion) {
-                            case .failure(_):
+                            switch completion {
+                            case .failure:
                                 self.uiState = .goToSignInScreen
                                 break
                             default:
                                 break
                             }
                         }, receiveValue: { success in
-                            
-                                let auth = UserAuth(idToken: success.accessToken,
-                                                    refreshToken: success.refreshToken,
-                                                    expires: Date().timeIntervalSince1970 + Double(success.expires),
-                                                    tokenType: success.tokenType)
-                                
-                                self.interactor.insertAuth(userAuth: auth)
-                                self.uiState = .goToHomeScreen
-                            
+
+                            let auth = UserAuth(idToken: success.accessToken,
+                                                refreshToken: success.refreshToken,
+                                                expires: Date().timeIntervalSince1970 + Double(success.expires),
+                                                tokenType: success.tokenType)
+
+                            self.interactor.insertAuth(userAuth: auth)
+                            self.uiState = .goToHomeScreen
+
                         })
                 } else {
                     self.uiState = .goToHomeScreen

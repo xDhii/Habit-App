@@ -22,7 +22,7 @@ enum WebService {
         case unauthorized
         case internalServerError
     }
-    
+
     enum Method: String {
         case get
         case post
@@ -53,13 +53,13 @@ enum WebService {
         guard var urlRequest = completeUrl(path: path) else {
             return
         }
-        
+
         _ = LocalDataSource.shared.getUserAuth()
             .sink { userAuth in
                 if let userAuth = userAuth {
-                    urlRequest.setValue("\(userAuth.tokenType) \(userAuth.idToken)",  forHTTPHeaderField: "Authorization")
+                    urlRequest.setValue("\(userAuth.tokenType) \(userAuth.idToken)", forHTTPHeaderField: "Authorization")
                 }
-                
+
                 urlRequest.httpMethod = method.rawValue
                 urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
                 urlRequest.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
@@ -88,10 +88,7 @@ enum WebService {
                 }
 
                 task.resume()
-                
             }
-
-        
     }
 
     public static func call<T: Encodable>(path: Endpoint,
