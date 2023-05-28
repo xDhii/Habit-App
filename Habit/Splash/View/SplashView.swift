@@ -16,7 +16,7 @@ struct SplashView: View {
             case .loading:
                 loadingView()
             case .goToSignInScreen:
-                Text("Carregar tela de login")
+                viewModel.signInView()
             case .goToHomeScreen:
                 Text("Carregar tela principal")
             case let .error(errorMessage):
@@ -33,14 +33,13 @@ extension SplashView {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .background(Color("backgroundColor"))
+                .background(Color("primaryBackgroundColor"))
                 .ignoresSafeArea()
 
             if let error = error {
                 Text("")
                     .alert(isPresented: .constant(true)) {
                         Alert(title: Text("Habit"), message: Text(error), dismissButton: .default(Text("Ok")) {
-                            // Do something
                         })
                     }
             }
@@ -50,7 +49,7 @@ extension SplashView {
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = SplashViewModel()
+        let viewModel = SplashViewModel(interactor: SplashInteractor())
         SplashView(viewModel: viewModel)
     }
 }
