@@ -17,6 +17,8 @@
 		BC4C80872A200B1400CBB9FF /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C80862A200B1400CBB9FF /* UserAuth.swift */; };
 		BC4C80892A200C7200CBB9FF /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */; };
 		BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */; };
+		BC4C808E2A23DD0F00CBB9FF /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808D2A23DD0F00CBB9FF /* RefreshRequest.swift */; };
+		BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808F2A23E13900CBB9FF /* SplashRemoteDataSource.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
@@ -57,6 +59,8 @@
 		BC4C80862A200B1400CBB9FF /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		BC4C808D2A23DD0F00CBB9FF /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
+		BC4C808F2A23E13900CBB9FF /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */,
+				BC4C808F2A23E13900CBB9FF /* SplashRemoteDataSource.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF377DC29E4E6F300E88A7E /* SplashUIState.swift */,
+				BC4C808D2A23DD0F00CBB9FF /* RefreshRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */,
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
 				BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */,
+				BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BC4C80852A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift in Sources */,
 				BC4C807E2A1D7B4500CBB9FF /* SignInRemoteDataSource.swift in Sources */,
@@ -463,6 +470,7 @@
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
 				BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */,
 				BCF377DB29E4E63F00E88A7E /* SplashView.swift in Sources */,
+				BC4C808E2A23DD0F00CBB9FF /* RefreshRequest.swift in Sources */,
 				BCF377E029E638C800E88A7E /* SplashViewModel.swift in Sources */,
 				BC4C80832A1ED9CF00CBB9FF /* SignUpInteractor.swift in Sources */,
 				BCA92D8B29F2189B006903DB /* CustomTextFieldStyle.swift in Sources */,
