@@ -31,7 +31,7 @@ struct EditTextView: View {
                 Text(error)
                     .foregroundColor(.red)
             }
-        }
+        }.background(Color("textFieldBackgroundColor"))
         .padding(.bottom, 10)
     }
 }
