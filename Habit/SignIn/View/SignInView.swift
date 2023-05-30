@@ -19,40 +19,43 @@ struct SignInView: View {
                 viewModel.homeView()
             } else {
                 NavigationView {
-                    ScrollView(showsIndicators: true) {
-                        VStack(alignment: .center, spacing: 20) {
-                            Spacer(minLength: 36)
-                            VStack(alignment: .center, spacing: 8) {
-                                Image("logo")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding(.horizontal, 48)
+                    ZStack(alignment: .top) {
+                        Color("primaryBackgroundColor")
+                            .ignoresSafeArea()
+                        ScrollView(showsIndicators: true) {
+                            VStack(alignment: .center, spacing: 20) {
+                                Spacer(minLength: 36)
+                                VStack(alignment: .center, spacing: 8) {
+                                    Image("logo")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.horizontal, 48)
 
-                                Text("Login")
-                                    .foregroundColor(Color("primaryTitle"))
-                                    .font(Font.system(.title).bold())
-                                    .padding(.bottom, 8)
+                                    Text("Login")
+                                        .foregroundColor(Color("primaryTitle"))
+                                        .font(Font.system(.title).bold())
+                                        .padding(.bottom, 8)
 
-                                emailField
-                                passwordField
-                                enterButton
-                                registerLink
+                                    emailField
+                                    passwordField
+                                    enterButton
+                                    registerLink
+                                }
+                            }
+
+                            if case let SignInUIState.error(value) = viewModel.uiState {
+                                Text("")
+                                    .alert(isPresented: .constant(true)) {
+                                        Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
+                                        })
+                                    }
                             }
                         }
-
-                        if case let SignInUIState.error(value) = viewModel.uiState {
-                            Text("")
-                                .alert(isPresented: .constant(true)) {
-                                    Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
-                                    })
-                                }
-                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.horizontal, 32)
+                        .navigationBarTitle("Login", displayMode: .inline)
+                        .navigationBarHidden(navigationHidden)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding(.horizontal, 32)
-                    .background(Color("primaryBackgroundColor"))
-                    .navigationBarTitle("Login", displayMode: .inline)
-                    .navigationBarHidden(navigationHidden)
                 }
             }
         }

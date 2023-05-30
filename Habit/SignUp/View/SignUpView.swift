@@ -12,33 +12,37 @@ struct SignUpView: View {
 
     var body: some View {
         ZStack {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Cadastro")
-                            .foregroundColor(Color("primaryTitle"))
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 8)
+            ZStack(alignment: .top) {
+                Color("primaryBackgroundColor")
+                    .ignoresSafeArea()
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Cadastro")
+                                .foregroundColor(Color("primaryTitle"))
+                                .font(Font.system(.title).bold())
+                                .padding(.bottom, 8)
 
-                        fullNameField
-                        emailField
-                        passwordField
-                        documentField
-                        phoneField
-                        birthdayField
-                        genderField
-                        saveButton
-                    }
-                    Spacer()
-                }.padding(.horizontal, 8)
+                            fullNameField
+                            emailField
+                            passwordField
+                            documentField
+                            phoneField
+                            birthdayField
+                            genderField
+                            saveButton
+                        }
+                        Spacer()
+                    }.padding(.horizontal, 8)
 
-            }.padding()
+                }.padding()
 
-            if case let SignUpUIState.error(value) = viewModel.uiState {
-                Text("")
-                    .alert(isPresented: .constant(true)) {
-                        Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
-                    }
+                if case let SignUpUIState.error(value) = viewModel.uiState {
+                    Text("")
+                        .alert(isPresented: .constant(true)) {
+                            Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
+                        }
+                }
             }
         }
     }
