@@ -14,7 +14,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("Habits Content \(selection)")
+            viewModel.habitView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2")
                     Text("Habits")
