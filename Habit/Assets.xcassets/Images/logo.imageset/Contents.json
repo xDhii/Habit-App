@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "DALL_E_2023-04-11_19.28.57_-_Material_Design__A_monkey_face__Logo__Modern_design__Soft_color_palette__black_color_background__Centered__Minimalist__Vector_illustration__Vector_art-2-removebg-preview.png",
+      "filename" : "logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo_resized.png",
+      "filename" : "logo 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo_resized 1.png",
+      "filename" : "logo 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
