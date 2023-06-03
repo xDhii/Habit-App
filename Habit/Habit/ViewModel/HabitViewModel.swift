@@ -8,9 +8,8 @@
 import Foundation
 
 class HabitViewModel: ObservableObject {
-    
-    @Published var uiState: HabitUIState = .loading
-    
-    
-    
+    @Published var uiState: HabitUIState = .emptyList
+    @Published var title: String = "Title"
+    @Published var headline: String = "headline"
+    @Published var desc: String = "desc"
 }
