@@ -41,6 +41,7 @@ struct SignInView: View {
                                     enterButton
                                     registerLink
                                 }
+                                .padding(.horizontal, 16)
                             }
 
                             if case let SignInUIState.error(value) = viewModel.uiState {
@@ -52,7 +53,7 @@ struct SignInView: View {
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 16)
                         .navigationBarTitle("Login", displayMode: .inline)
                         .navigationBarHidden(navigationHidden)
                     }
@@ -87,7 +88,6 @@ extension SignInView {
     var enterButton: some View {
         LoadingButtonView(action: {
                               viewModel.login()
-
                           },
                           text: "Entrar",
                           disabled: !viewModel.email.isEmail() || viewModel.password.count < 8,
