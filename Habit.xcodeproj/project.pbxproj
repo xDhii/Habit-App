@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349A29EDCB6600AA3AF9 /* Gender.swift */; };
 		BC16349E29EDD74C00AA3AF9 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */; };
+		BC277A9B2A2D53DB00D4CFF6 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC277A9A2A2D53DB00D4CFF6 /* ButtonStyle.swift */; };
 		BC4C807C2A1D78DF00CBB9FF /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807B2A1D78DF00CBB9FF /* SignInInteractor.swift */; };
 		BC4C807E2A1D7B4500CBB9FF /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807D2A1D7B4500CBB9FF /* SignInRemoteDataSource.swift */; };
 		BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C807F2A1ECD6500CBB9FF /* AppError.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		BC16349A29EDCB6600AA3AF9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		BC16349D29EDD74C00AA3AF9 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
+		BC277A9A2A2D53DB00D4CFF6 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		BC4C807B2A1D78DF00CBB9FF /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		BC4C807D2A1D7B4500CBB9FF /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
 		BC4C807F2A1ECD6500CBB9FF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BC277A992A2D53B400D4CFF6 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				BC277A9A2A2D53DB00D4CFF6 /* ButtonStyle.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		BC4C807A2A1D78C700CBB9FF /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		BCA92D8629F20E70006903DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC277A992A2D53B400D4CFF6 /* Modifier */,
 				BCA92D8929F21880006903DB /* Style */,
 				BCA92D8729F20E87006903DB /* EditTextView.swift */,
 				BCA92D8F29F33023006903DB /* LoadingButtonView.swift */,
@@ -513,6 +524,7 @@
 				BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */,
 				BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */,
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
+				BC277A9B2A2D53DB00D4CFF6 /* ButtonStyle.swift in Sources */,
 				BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */,
 				BCEF13AA2A26BB8D00DCB705 /* HabitViewModel.swift in Sources */,
 				BCEF13A82A26BB5100DCB705 /* HabitView.swift in Sources */,
