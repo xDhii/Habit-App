@@ -31,7 +31,7 @@ struct LoadingButtonView: View {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
                 .opacity(showProgress ? 1 : 0)
-        }.padding()
+        }
     }
 }
 

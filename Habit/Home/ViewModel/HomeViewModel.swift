@@ -15,4 +15,3 @@ extension HomeViewModel {
         return HomeViewRouter.makeHabitView()
     }
 }
-

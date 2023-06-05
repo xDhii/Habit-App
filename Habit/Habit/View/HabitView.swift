@@ -18,24 +18,22 @@ struct HabitView: View {
             } else {
                 NavigationView {
                     ScrollView(showsIndicators: false) {
-                        VStack {
+                        VStack(spacing: 12) {
                             topContainer
                             addButton
 
                             if case HabitUIState.emptyList = viewModel.uiState {
-                                
                                 VStack {
-                                    
                                     Spacer(minLength: 60)
-                                    
+
                                     Image(systemName: "exclamationmark.octagon.fill")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 24, height: 24, alignment: .center)
-                                    
+
                                     Text("No habits found :(")
                                 }
-                                
+
                             } else if case HabitUIState.fullList = viewModel.uiState {
                             } else if case HabitUIState.error = viewModel.uiState {
                             }
@@ -84,8 +82,9 @@ extension HabitView {
             destination: Text("Screen to add")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)) {
             Label("Create Habit", systemImage: "plus.app")
+                        .modifier(ButtonStyle())
         }
-                .padding(.horizontal, 16)
+        .padding(.horizontal, 16)
     }
 }
 

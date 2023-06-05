@@ -32,7 +32,7 @@ struct EditTextView: View {
                     .foregroundColor(.red)
             }
         }.background(Color("textFieldBackgroundColor"))
-        .padding(.bottom, 10)
+            .padding(.bottom, 10)
     }
 }
 
