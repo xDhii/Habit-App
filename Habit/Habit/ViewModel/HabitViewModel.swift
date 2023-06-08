@@ -12,14 +12,13 @@ class HabitViewModel: ObservableObject {
     @Published var title: String = "Title"
     @Published var headline: String = "headline"
     @Published var desc: String = "desc"
-    
+
     func onAppear() {
-        self.uiState = .loading
-        
+        uiState = .loading
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
             var rows: [HabitCardViewModel] = []
-            
+
             rows.append(HabitCardViewModel(id: 1,
                                            icon: "https://via.placeholder.com/150",
                                            date: "01/01/2023 00:00:00",
@@ -27,7 +26,7 @@ class HabitViewModel: ObservableObject {
                                            label: "horas",
                                            value: "2",
                                            state: .green))
-            
+
             rows.append(HabitCardViewModel(id: 2,
                                            icon: "https://via.placeholder.com/150",
                                            date: "01/01/2023 00:00:00",
@@ -35,7 +34,7 @@ class HabitViewModel: ObservableObject {
                                            label: "km",
                                            value: "5",
                                            state: .green))
-            
+
             rows.append(HabitCardViewModel(id: 3,
                                            icon: "https://via.placeholder.com/150",
                                            date: "01/01/2023 00:00:00",
@@ -43,7 +42,7 @@ class HabitViewModel: ObservableObject {
                                            label: "km",
                                            value: "5",
                                            state: .green))
-            
+
             rows.append(HabitCardViewModel(id: 4,
                                            icon: "https://via.placeholder.com/150",
                                            date: "01/01/2023 00:00:00",
@@ -51,7 +50,7 @@ class HabitViewModel: ObservableObject {
                                            label: "km",
                                            value: "5",
                                            state: .green))
-            
+
             rows.append(HabitCardViewModel(id: 5,
                                            icon: "https://via.placeholder.com/150",
                                            date: "01/01/2023 00:00:00",
@@ -59,10 +58,8 @@ class HabitViewModel: ObservableObject {
                                            label: "km",
                                            value: "5",
                                            state: .green))
-            
+
             self.uiState = .fullList(rows)
-            
         }
     }
-    
 }

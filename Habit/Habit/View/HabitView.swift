@@ -34,21 +34,31 @@ struct HabitView: View {
                                     Text("No habits found :(")
                                 }
 
-                            } else if case HabitUIState.fullList(let rows) = viewModel.uiState {
-                                
+                            } else if case let HabitUIState.fullList(rows) = viewModel.uiState {
                                 LazyVStack {
                                     ForEach(rows, content: HabitCardView.init(viewModel:))
                                 }
                                 .padding(.horizontal, 8)
-                                
-                            } else if case HabitUIState.error = viewModel.uiState {
+
+                            } else if case let HabitUIState.error(msg) = viewModel.uiState {
+                                Text("")
+                                    .alert(isPresented: .constant(true)) {
+                                        Alert(
+                                            title: Text("Ops! \(msg)"),
+                                            message: Text("An error occurred"),
+                                            primaryButton: .default(Text("Try again")) {
+                                                viewModel.onAppear()
+                                            },
+                                            secondaryButton: .cancel()
+                                        )
+                                    }
                             }
                         }
                     }.navigationTitle("My Habits")
                 }
             }
         }
-        .onAppear() {
+        .onAppear {
             viewModel.onAppear()
         }
     }
@@ -91,7 +101,7 @@ extension HabitView {
             destination: Text("Screen to add")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)) {
             Label("Create Habit", systemImage: "plus.app")
-                        .modifier(ButtonStyle())
+                .modifier(ButtonStyle())
         }
         .padding(.horizontal, 16)
     }
