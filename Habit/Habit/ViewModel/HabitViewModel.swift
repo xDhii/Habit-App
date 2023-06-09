@@ -6,60 +6,73 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 class HabitViewModel: ObservableObject {
-    @Published var uiState: HabitUIState = .emptyList
-    @Published var title: String = "Title"
-    @Published var headline: String = "headline"
-    @Published var desc: String = "desc"
+    @Published var uiState: HabitUIState = .loading
+    @Published var title: String = ""
+    @Published var headline: String = ""
+    @Published var desc: String = ""
 
+    private var cancellableRequest: AnyCancellable?
+    private let interactor: HabitInteractor
+    
+    init(interactor: HabitInteractor) {
+        self.interactor = interactor
+    }
+    
+    deinit {
+        cancellableRequest?.cancel()
+    }
+    
     func onAppear() {
         uiState = .loading
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            var rows: [HabitCardViewModel] = []
-
-            rows.append(HabitCardViewModel(id: 1,
-                                           icon: "https://via.placeholder.com/150",
-                                           date: "01/01/2023 00:00:00",
-                                           name: "Tocar guitarra",
-                                           label: "horas",
-                                           value: "2",
-                                           state: .green))
-
-            rows.append(HabitCardViewModel(id: 2,
-                                           icon: "https://via.placeholder.com/150",
-                                           date: "01/01/2023 00:00:00",
-                                           name: "Fazer caminhada",
-                                           label: "km",
-                                           value: "5",
-                                           state: .green))
-
-            rows.append(HabitCardViewModel(id: 3,
-                                           icon: "https://via.placeholder.com/150",
-                                           date: "01/01/2023 00:00:00",
-                                           name: "Fazer caminhada",
-                                           label: "km",
-                                           value: "5",
-                                           state: .green))
-
-            rows.append(HabitCardViewModel(id: 4,
-                                           icon: "https://via.placeholder.com/150",
-                                           date: "01/01/2023 00:00:00",
-                                           name: "Fazer caminhada",
-                                           label: "km",
-                                           value: "5",
-                                           state: .green))
-
-            rows.append(HabitCardViewModel(id: 5,
-                                           icon: "https://via.placeholder.com/150",
-                                           date: "01/01/2023 00:00:00",
-                                           name: "Fazer caminhada",
-                                           label: "km",
-                                           value: "5",
-                                           state: .green))
-
-            self.uiState = .fullList(rows)
-        }
+        cancellableRequest = interactor.fetchHabits()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch(completion) {
+                case .failure(let appError):
+                    self.uiState = .error(appError.message)
+                    break
+                case .finished:
+                    break
+                }
+            }, receiveValue: { response in
+                if response.isEmpty {
+                    self.uiState = .emptyList
+                    self.title = ""
+                    self.headline = "Watch out!"
+                    self.desc = "You still don't have any Habits"
+                } else {
+                    self.uiState = .fullList(
+                        response.map {
+                            
+                            let lastDate = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss",
+                                                               destPattern: "dd/MM/yyyy HH:mm") ?? ""
+                            
+                            var state = Color.green
+                            self.title = "Congrats!"
+                            self.headline = "You're up to date"
+                            self.desc = ""
+                            
+                            if lastDate < Date().toString(destPattern: "dd/MM/yyyy") {
+                                state = .red
+                                self.title = "Hey"
+                                self.headline = "Watch out!"
+                                self.desc = "You're late on your Habits!"
+                            }
+                            
+                            return HabitCardViewModel(id: $0.id,
+                                                      icon: $0.iconUrl ?? "",
+                                                      date: lastDate,
+                                                      name: $0.name,
+                                                      label: $0.label,
+                                                      value: "\($0.value ?? 0)",
+                                                      state: state)
+                        })
+                }
+            })
     }
 }
