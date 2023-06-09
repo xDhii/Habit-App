@@ -5,8 +5,8 @@
 //  Created by Adriano Valumin on 30/05/23.
 //
 
-import Foundation
 import Combine
+import Foundation
 import SwiftUI
 
 class HabitViewModel: ObservableObject {
@@ -14,26 +14,28 @@ class HabitViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var headline: String = ""
     @Published var desc: String = ""
+    @Published var opened: Bool = false
 
     private var cancellableRequest: AnyCancellable?
     private let interactor: HabitInteractor
-    
+
     init(interactor: HabitInteractor) {
         self.interactor = interactor
     }
-    
+
     deinit {
         cancellableRequest?.cancel()
     }
-    
+
     func onAppear() {
+        self.opened = true
         uiState = .loading
 
         cancellableRequest = interactor.fetchHabits()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
-                switch(completion) {
-                case .failure(let appError):
+                switch completion {
+                case let .failure(appError):
                     self.uiState = .error(appError.message)
                     break
                 case .finished:
@@ -48,22 +50,22 @@ class HabitViewModel: ObservableObject {
                 } else {
                     self.uiState = .fullList(
                         response.map {
-                            
                             let lastDate = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss",
                                                                destPattern: "dd/MM/yyyy HH:mm") ?? ""
-                            
+
                             var state = Color.green
                             self.title = "Congrats!"
                             self.headline = "You're up to date"
                             self.desc = ""
-                            
-                            if lastDate < Date().toString(destPattern: "dd/MM/yyyy") {
+
+                            let dateToCompare = $0.lastDate?.toDate(sourcePatterns: "yyyy-MM-dd'T'HH:mm:ss") ?? Date()
+                            if dateToCompare < Date() {
                                 state = .red
                                 self.title = "Hey"
                                 self.headline = "Watch out!"
                                 self.desc = "You're late on your Habits!"
                             }
-                            
+
                             return HabitCardViewModel(id: $0.id,
                                                       icon: $0.iconUrl ?? "",
                                                       date: lastDate,

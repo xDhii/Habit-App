@@ -16,7 +16,7 @@ struct HabitCardViewModel: Identifiable, Equatable {
     var label: String = ""
     var value: String = ""
     var state: Color = .green
-    
+
     static func == (lhs: HabitCardViewModel, rhs: HabitCardViewModel) -> Bool {
         return lhs.id == rhs.id
     }

@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 enum HomeViewRouter {
-    static func makeHabitView() -> some View {
-        let viewModel = HabitViewModel(interactor: HabitInteractor())
+    static func makeHabitView(viewModel: HabitViewModel) -> some View {
         return HabitView(viewModel: viewModel)
     }
 }
