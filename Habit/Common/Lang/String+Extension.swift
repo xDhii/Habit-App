@@ -33,6 +33,6 @@ extension String {
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = source
 
-        return = formatter.date(from: self)
+        return formatter.date(from: self)
     }
 }
