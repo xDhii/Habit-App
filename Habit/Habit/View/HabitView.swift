@@ -30,6 +30,7 @@ struct HabitView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 24, height: 24, alignment: .center)
+                                        .accentColor(Color("tabViewIcon")) // TODO: Check why the color isn't being applied
 
                                     Text("No habits found :(")
                                 }
@@ -88,8 +89,7 @@ extension HabitView {
         .padding(.vertical, 32)
         .overlay(
             RoundedRectangle(cornerRadius: 6)
-                .stroke(Color("borderColor"), lineWidth: 1)
-        )
+                .stroke(Color("borderColor"), lineWidth: 1))
         .padding(.horizontal, 16)
         .padding(.top, 16)
     }

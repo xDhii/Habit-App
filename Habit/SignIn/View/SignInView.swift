@@ -89,7 +89,7 @@ extension SignInView {
         LoadingButtonView(action: {
                               viewModel.login()
                           },
-                          text: "Entrar",
+                          text: "Sign In",
                           disabled: !viewModel.email.isEmail() || viewModel.password.count < 8,
                           showProgress: self.viewModel.uiState == SignInUIState.loading
         )
@@ -99,8 +99,8 @@ extension SignInView {
 extension SignInView {
     var registerLink: some View {
         VStack {
-            Text("Ainda não tem um cadastro?")
-                .foregroundColor(.gray)
+            Text("Don't have an account??")
+                .foregroundColor(Color("primaryText"))
                 .padding(.top, 48)
 
             ZStack {
@@ -110,9 +110,9 @@ extension SignInView {
                     selection: $action,
                     label: { EmptyView() })
 
-                Button("Cadastre-se") {
+                Button("Sign Up") {
                     self.action = 1
-                }
+                }.accentColor(Color("primaryLink"))
             }
         }
     }

@@ -14,19 +14,20 @@ struct HomeView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-//          Habits Tab
+            //          Habits Tab
             viewModel.habitView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2")
                     Text("Habits")
+
                 }.tag(0)
-//          Charts Tab
+            //          Charts Tab
             Text("Charts Content \(selection)")
                 .tabItem {
                     Image(systemName: "chart.bar")
                     Text("Charts")
                 }.tag(1)
-//          Profile Tab
+            //          Profile Tab
             Text("Profile Content \(selection)")
                 .tabItem {
                     Image(systemName: "person.crop.circle")
