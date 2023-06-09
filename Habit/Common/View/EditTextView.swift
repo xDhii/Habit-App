@@ -30,9 +30,12 @@ struct EditTextView: View {
             if let error = error, failure == true, !text.isEmpty {
                 Text(error)
                     .foregroundColor(.red)
+                    .overlay(RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.red, lineWidth: 1))
             }
         }.background(Color("textFieldBackgroundColor"))
             .padding(.bottom, 10)
+            .padding(.horizontal, 2)
     }
 }
 
