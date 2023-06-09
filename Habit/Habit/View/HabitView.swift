@@ -60,7 +60,9 @@ struct HabitView: View {
             }
         }
         .onAppear {
-            viewModel.onAppear()
+            if !viewModel.opened {
+                viewModel.onAppear()
+            }
         }
     }
 }
@@ -115,6 +117,6 @@ extension HabitView {
 
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRouter.makeHabitView()
+        HomeViewRouter.makeHabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
     }
 }

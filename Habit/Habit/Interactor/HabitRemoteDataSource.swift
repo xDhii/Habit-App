@@ -18,7 +18,7 @@ class HabitRemoteDataSource {
         return Future<[HabitResponse], AppError> { promise in
             WebService.call(path: .habits, method: .get) { result in
                 switch result {
-                case let .failure(error, data):
+                case let .failure(_, data):
                     if let data = data {
                         let decoder = JSONDecoder()
                         let response = try? decoder.decode(SignInErrorResponse.self, from: data)

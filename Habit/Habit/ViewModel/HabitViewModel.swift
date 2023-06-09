@@ -14,6 +14,7 @@ class HabitViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var headline: String = ""
     @Published var desc: String = ""
+    @Published var opened: Bool = false
 
     private var cancellableRequest: AnyCancellable?
     private let interactor: HabitInteractor
@@ -27,6 +28,7 @@ class HabitViewModel: ObservableObject {
     }
 
     func onAppear() {
+        self.opened = true
         uiState = .loading
 
         cancellableRequest = interactor.fetchHabits()
