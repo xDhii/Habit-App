@@ -19,7 +19,7 @@ struct SignUpView: View {
                     VStack(alignment: .center) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Cadastro")
-                                .foregroundColor(Color("primaryTitle"))
+                                .foregroundColor(Color("primaryTitleColor"))
                                 .font(Font.system(.title).bold())
                                 .padding(.bottom, 8)
 

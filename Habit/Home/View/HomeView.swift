@@ -35,7 +35,7 @@ struct HomeView: View {
                 }.tag(2)
         }
         .background(Color("secondaryBackgroundColor"))
-        .accentColor(Color("tabViewIcon"))
+        .accentColor(Color("tabViewIconColor"))
     }
 }
 

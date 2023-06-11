@@ -26,13 +26,13 @@ struct SignInView: View {
                             VStack(alignment: .center, spacing: 20) {
                                 Spacer(minLength: 36)
                                 VStack(alignment: .center, spacing: 8) {
-                                    Image("logo")
+                                    Image("logoImage")
                                         .resizable()
                                         .scaledToFit()
                                         .padding(.horizontal, 48)
 
                                     Text("Login")
-                                        .foregroundColor(Color("primaryTitle"))
+                                        .foregroundColor(Color("primaryTitleColor"))
                                         .font(Font.system(.title).bold())
                                         .padding(.bottom, 8)
 
@@ -112,7 +112,7 @@ extension SignInView {
 
                 Button("Sign Up") {
                     self.action = 1
-                }.accentColor(Color("primaryLink"))
+                }.accentColor(Color("primaryLinkColor"))
             }
         }
     }
