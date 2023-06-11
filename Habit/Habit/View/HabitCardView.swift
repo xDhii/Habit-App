@@ -67,7 +67,7 @@ struct HabitCardView: View {
                     Spacer()
                 }
                 .padding()
-                .cornerRadius(4)
+                .cornerRadius(7)
 
             })
 
@@ -76,7 +76,7 @@ struct HabitCardView: View {
                 .foregroundColor(viewModel.state)
 
         }.background(
-            RoundedRectangle(cornerRadius: 4)
+            RoundedRectangle(cornerRadius: 7)
                 .stroke(Color("borderColor"), lineWidth: 1.0)
                 .shadow(color: Color("shadowColor"), radius: 2, x: 2, y: 2)
         )

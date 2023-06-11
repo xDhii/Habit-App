@@ -25,7 +25,7 @@ struct LoadingButtonView: View {
                     .font(Font.system(.title3).bold())
                     .foregroundColor(disabled ? Color("disabledButtonText") : Color("primaryText"))
                     .background(disabled ? Color("disabledButtonBackground") : Color("primaryButtonBackgroundColor"))
-                    .cornerRadius(7.0)
+                    .cornerRadius(7)
             }).disabled(disabled || showProgress)
 
             ProgressView()

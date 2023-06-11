@@ -17,6 +17,6 @@ struct ButtonStyle: ViewModifier {
             .font(Font.system(.title3).bold())
             .foregroundColor(Color("primaryText"))
             .background(Color("primaryButtonBackgroundColor"))
-            .cornerRadius(7.0)
+            .cornerRadius(7)
     }
 }
