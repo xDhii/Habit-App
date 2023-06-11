@@ -68,7 +68,7 @@ extension SignInView {
         EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
-                     error: "E-mail inválido",
+                     error: "Invalid e-mail",
                      failure: !viewModel.email.isEmail())
     }
 }
@@ -76,9 +76,9 @@ extension SignInView {
 extension SignInView {
     var passwordField: some View {
         EditTextView(text: $viewModel.password,
-                     placeholder: "Senha",
+                     placeholder: "Password",
                      keyboard: .default,
-                     error: "Senha deve ter ao menos 8 caracteres",
+                     error: "Password should have at least 8 characters",
                      failure: viewModel.password.count < 8,
                      isSecure: true)
     }

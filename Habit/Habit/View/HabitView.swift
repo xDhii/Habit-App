@@ -90,7 +90,7 @@ extension HabitView {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 32)
         .overlay(
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 7)
                 .stroke(Color("borderColor"), lineWidth: 1))
         .padding(.horizontal, 16)
         .padding(.top, 16)

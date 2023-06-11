@@ -28,22 +28,25 @@ struct EditTextView: View {
                     .textFieldStyle(CustomTextFieldStyle())
             }
             if let error = error, failure == true, !text.isEmpty {
-                Text(error)
-                    .foregroundColor(.red)
-                    .overlay(RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.red, lineWidth: 1))
+                Text(error).padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .foregroundColor(Color("errorColor"))
+                    .font(.subheadline)
+                    .overlay(RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color("errorColor"), lineWidth: 1)
+                    )
             }
-        }.background(Color("textFieldBackgroundColor"))
-            .padding(.bottom, 10)
-            .padding(.horizontal, 2)
+        }
+        .padding(.bottom, 10)
+        .padding(.horizontal, 2)
     }
 }
 
 struct EditTextView_Previews: PreviewProvider {
     static var previews: some View {
-        EditTextView(text: .constant("Texto"),
+        EditTextView(text: .constant("Text"),
                      placeholder: "E-mail",
-                     error: "Campo inválido",
+                     error: "Invalid Field",
                      failure: "a@a.com".count < 3)
     }
 }

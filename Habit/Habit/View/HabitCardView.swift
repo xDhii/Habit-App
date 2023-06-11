@@ -37,6 +37,7 @@ struct HabitCardView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(viewModel.name)
                                 .foregroundColor(Color("primaryText"))
+                                .bold()
 
                             Text(viewModel.label)
                                 .foregroundColor(Color("secondaryText"))
@@ -50,7 +51,7 @@ struct HabitCardView: View {
                         Spacer()
 
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Registrado")
+                            Text("Registered")
                                 .foregroundColor(Color("primaryText"))
                                 .bold()
                                 .multilineTextAlignment(.leading)
@@ -67,16 +68,17 @@ struct HabitCardView: View {
                     Spacer()
                 }
                 .padding()
-                .cornerRadius(4)
+                .cornerRadius(7)
 
             })
 
-            Rectangle()
-                .frame(width: 8)
+            Spacer()
+            RoundedRectangle(cornerRadius: 7)
+                .frame(width: 7)
                 .foregroundColor(viewModel.state)
 
         }.background(
-            RoundedRectangle(cornerRadius: 4)
+            RoundedRectangle(cornerRadius: 7)
                 .stroke(Color("borderColor"), lineWidth: 1.0)
                 .shadow(color: Color("shadowColor"), radius: 2, x: 2, y: 2)
         )
@@ -106,7 +108,7 @@ struct HabitCardView_Previews: PreviewProvider {
                                                             state: .green))
             }
             .frame(maxWidth: .infinity)
-            .navigationTitle("Teste")
+            .navigationTitle("Test")
         }
     }
 }
