@@ -71,8 +71,9 @@ struct HabitCardView: View {
 
             })
 
-            Rectangle()
-                .frame(width: 8)
+            Spacer()
+            RoundedRectangle(cornerRadius: 7)
+                .frame(width: 7)
                 .foregroundColor(viewModel.state)
 
         }.background(
@@ -106,7 +107,7 @@ struct HabitCardView_Previews: PreviewProvider {
                                                             state: .green))
             }
             .frame(maxWidth: .infinity)
-            .navigationTitle("Teste")
+            .navigationTitle("Test")
         }
     }
 }
