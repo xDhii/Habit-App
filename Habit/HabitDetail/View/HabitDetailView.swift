@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HabitDetailView: View {
     @ObservedObject var viewModel: HabitDetailViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     init(viewModel: HabitDetailViewModel) {
         self.viewModel = viewModel
@@ -49,7 +50,11 @@ struct HabitDetailView: View {
                 .padding(.vertical, 8)
 
             Button("Cancel") {
-                // dismiss
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.easeOut(duration: 0.15)) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
             }
             .modifier(ButtonStyle())
             .padding(.horizontal, 16)
