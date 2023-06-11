@@ -26,6 +26,9 @@
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
 		BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDE2A158DAB00A36986 /* ErrorResponse.swift */; };
+		BC98F6192A353A0E003EE3D4 /* HabitDetailUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98F6182A353A0E003EE3D4 /* HabitDetailUIState.swift */; };
+		BC98F61B2A353A96003EE3D4 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98F61A2A353A96003EE3D4 /* HabitDetailViewModel.swift */; };
+		BC98F61D2A353B26003EE3D4 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98F61C2A353B26003EE3D4 /* HabitDetailView.swift */; };
 		BCA92D8229EE1B5E006903DB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */; };
 		BCA92D8529EE1BE2006903DB /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */; };
 		BCA92D8829F20E87006903DB /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8729F20E87006903DB /* EditTextView.swift */; };
@@ -79,6 +82,9 @@
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		BC866EDE2A158DAB00A36986 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		BC98F6182A353A0E003EE3D4 /* HabitDetailUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailUIState.swift; sourceTree = "<group>"; };
+		BC98F61A2A353A96003EE3D4 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
+		BC98F61C2A353B26003EE3D4 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
 		BCA92D8129EE1B5E006903DB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BCA92D8429EE1BE2006903DB /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		BCA92D8729F20E87006903DB /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
@@ -188,6 +194,40 @@
 				BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		BC98F6142A3539C6003EE3D4 /* HabitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BC98F6172A3539DA003EE3D4 /* ViewModel */,
+				BC98F6162A3539D5003EE3D4 /* View */,
+				BC98F6152A3539D0003EE3D4 /* Model */,
+			);
+			path = HabitDetail;
+			sourceTree = "<group>";
+		};
+		BC98F6152A3539D0003EE3D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC98F6182A353A0E003EE3D4 /* HabitDetailUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC98F6162A3539D5003EE3D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC98F61C2A353B26003EE3D4 /* HabitDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC98F6172A3539DA003EE3D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC98F61A2A353A96003EE3D4 /* HabitDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BCA92D8629F20E70006903DB /* View */ = {
@@ -347,6 +387,7 @@
 		BCF377C829E4E47700E88A7E /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				BC98F6142A3539C6003EE3D4 /* HabitDetail */,
 				BCEF13A32A26BB0E00DCB705 /* Habit */,
 				BC16349829EDCB5100AA3AF9 /* Common */,
 				BCB4F03129EB77C8009FCD5C /* SignUp */,
@@ -528,9 +569,11 @@
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
 				BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */,
 				BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */,
+				BC98F61D2A353B26003EE3D4 /* HabitDetailView.swift in Sources */,
 				BCF5B92B2A32B1CB00C69E5E /* Date+Extension.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BC4C80852A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift in Sources */,
+				BC98F61B2A353A96003EE3D4 /* HabitDetailViewModel.swift in Sources */,
 				BC4C807E2A1D7B4500CBB9FF /* SignInRemoteDataSource.swift in Sources */,
 				BCEF13AC2A26C2D700DCB705 /* HabitModel.swift in Sources */,
 				BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */,
@@ -552,6 +595,7 @@
 				BCF5B9292A32A91900C69E5E /* HabitInteractor.swift in Sources */,
 				BC41E10A2A2FF4FD007C42A1 /* HabitCardViewModel.swift in Sources */,
 				BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */,
+				BC98F6192A353A0E003EE3D4 /* HabitDetailUIState.swift in Sources */,
 				BCF5B9272A32A67300C69E5E /* HabitRemoteDataSource.swift in Sources */,
 				BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */,
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
@@ -696,6 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Habit/Preview Content\"";
@@ -716,6 +761,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrianovalumin.Habit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -727,6 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Habit/Preview Content\"";
@@ -747,6 +794,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrianovalumin.Habit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

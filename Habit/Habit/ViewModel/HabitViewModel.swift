@@ -28,7 +28,7 @@ class HabitViewModel: ObservableObject {
     }
 
     func onAppear() {
-        self.opened = true
+        opened = true
         uiState = .loading
 
         cancellableRequest = interactor.fetchHabits()
@@ -73,7 +73,8 @@ class HabitViewModel: ObservableObject {
                                                       label: $0.label,
                                                       value: "\($0.value ?? 0)",
                                                       state: state)
-                        })
+                        }
+                    )
                 }
             })
     }
