@@ -22,6 +22,7 @@
 		BC4C808C2A23C44300CBB9FF /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */; };
 		BC4C808E2A23DD0F00CBB9FF /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808D2A23DD0F00CBB9FF /* RefreshRequest.swift */; };
 		BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C808F2A23E13900CBB9FF /* SplashRemoteDataSource.swift */; };
+		BC4F78952A36341D002EAD73 /* HabitCardViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F78942A36341D002EAD73 /* HabitCardViewRouter.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
@@ -78,6 +79,7 @@
 		BC4C808B2A23C44300CBB9FF /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		BC4C808D2A23DD0F00CBB9FF /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
 		BC4C808F2A23E13900CBB9FF /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
+		BC4F78942A36341D002EAD73 /* HabitCardViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewRouter.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				BCEF13A92A26BB8D00DCB705 /* HabitViewModel.swift */,
 				BC41E1092A2FF4FD007C42A1 /* HabitCardViewModel.swift */,
+				BC4F78942A36341D002EAD73 /* HabitCardViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */,
 				BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */,
 				BC98F61D2A353B26003EE3D4 /* HabitDetailView.swift in Sources */,
+				BC4F78952A36341D002EAD73 /* HabitCardViewRouter.swift in Sources */,
 				BCF5B92B2A32B1CB00C69E5E /* Date+Extension.swift in Sources */,
 				BCB4F03029EB7037009FCD5C /* HomeViewModel.swift in Sources */,
 				BC4C80852A1EDC5400CBB9FF /* SignUpRemoteDataSource.swift in Sources */,
