@@ -37,6 +37,7 @@ struct HabitCardView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(viewModel.name)
                                 .foregroundColor(Color("primaryText"))
+                                .bold()
 
                             Text(viewModel.label)
                                 .foregroundColor(Color("secondaryText"))
@@ -50,7 +51,7 @@ struct HabitCardView: View {
                         Spacer()
 
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Registrado")
+                            Text("Registered")
                                 .foregroundColor(Color("primaryText"))
                                 .bold()
                                 .multilineTextAlignment(.leading)
