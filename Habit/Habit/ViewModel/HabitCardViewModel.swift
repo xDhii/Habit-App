@@ -21,3 +21,9 @@ struct HabitCardViewModel: Identifiable, Equatable {
         return lhs.id == rhs.id
     }
 }
+
+extension HabitCardViewModel {
+    func habitDetailView() -> some View {
+        return HabitCardViewRouter.makeHabitDetailView(id: id, name: name, label: label)
+    }
+}
