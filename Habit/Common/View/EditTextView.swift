@@ -31,6 +31,7 @@ struct EditTextView: View {
                 Text(error).padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .foregroundColor(Color("errorColor"))
+                    .font(.subheadline)
                     .overlay(RoundedRectangle(cornerRadius: 7)
                         .stroke(Color("errorColor"), lineWidth: 1)
                     )
