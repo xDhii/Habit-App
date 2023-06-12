@@ -36,15 +36,15 @@ struct HabitCardView: View {
 
                         VStack(alignment: .leading, spacing: 4) {
                             Text(viewModel.name)
-                                .foregroundColor(Color("primaryText"))
+                                .foregroundColor(Color("primaryTextColor"))
                                 .bold()
 
                             Text(viewModel.label)
-                                .foregroundColor(Color("secondaryText"))
+                                .foregroundColor(Color("secondaryTextColor"))
                                 .bold()
 
                             Text(viewModel.date)
-                                .foregroundColor(Color("secondaryText"))
+                                .foregroundColor(Color("secondaryTextColor"))
                                 .bold()
                         }.frame(maxWidth: 300, alignment: .leading)
 
@@ -52,12 +52,12 @@ struct HabitCardView: View {
 
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Registered")
-                                .foregroundColor(Color("primaryText"))
+                                .foregroundColor(Color("primaryTextColor"))
                                 .bold()
                                 .multilineTextAlignment(.leading)
 
                             Text(viewModel.value)
-                                .foregroundColor(Color("secondaryText"))
+                                .foregroundColor(Color("secondaryTextColor"))
                                 .bold()
                                 .multilineTextAlignment(.leading)
                         }

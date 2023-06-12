@@ -19,11 +19,11 @@ struct HabitDetailView: View {
         ScrollView(showsIndicators: false, content: {
             VStack(alignment: .center, spacing: 12, content: {
                 Text(viewModel.name)
-                    .foregroundColor(Color("primaryText"))
+                    .foregroundColor(Color("primaryTextColor"))
                     .font(.title.bold())
 
                 Text("Unit: \(viewModel.label)")
-                    .foregroundColor(Color("secondaryText"))
+                    .foregroundColor(Color("secondaryTextColor"))
                     .multilineTextAlignment(.center)
 
             })
@@ -40,7 +40,7 @@ struct HabitDetailView: View {
                     .padding(.bottom, 8)
             }).padding(.horizontal, 32)
             Text("Checkpoints should be logged every 24h.")
-                .foregroundColor(Color("secondaryText"))
+                .foregroundColor(Color("secondaryTextColor"))
 
             LoadingButtonView(action: {
                 viewModel.save()
