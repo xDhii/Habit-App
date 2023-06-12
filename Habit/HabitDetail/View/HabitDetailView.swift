@@ -43,6 +43,7 @@ struct HabitDetailView: View {
                 .foregroundColor(Color("secondaryText"))
 
             LoadingButtonView(action: {
+                viewModel.save()
             }, text: "Save",
             disabled: self.viewModel.value.isEmpty,
             showProgress: self.viewModel.uiState == .loading)
@@ -70,6 +71,7 @@ struct HabitDetailView_Previews: PreviewProvider {
     static var previews: some View {
         HabitDetailView(viewModel: HabitDetailViewModel(id: 1,
                                                         name: "Play Guitar",
-                                                        label: "Hours"))
+                                                        label: "Hours",
+                                                        interactor: HabitDetailInteractor()))
     }
 }
