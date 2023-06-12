@@ -9,7 +9,7 @@ import SwiftUI
 
 enum HabitCardViewRouter {
     static func makeHabitDetailView(id: Int, name: String, label: String) -> some View {
-        let viewModel = HabitDetailViewModel(id: id, name: name, label: label)
+        let viewModel = HabitDetailViewModel(id: id, name: name, label: label, interactor: HabitDetailInteractor())
         return HabitDetailView(viewModel: viewModel)
     }
 }

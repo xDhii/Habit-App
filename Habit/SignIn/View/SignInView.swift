@@ -100,7 +100,7 @@ extension SignInView {
     var registerLink: some View {
         VStack {
             Text("Don't have an account??")
-                .foregroundColor(Color("primaryText"))
+                .foregroundColor(Color("primaryTextColor"))
                 .padding(.top, 48)
 
             ZStack {

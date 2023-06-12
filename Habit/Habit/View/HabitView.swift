@@ -81,11 +81,11 @@ extension HabitView {
 
             Text(viewModel.headline)
                 .font(.title3.bold())
-                .foregroundColor(Color("primaryText"))
+                .foregroundColor(Color("primaryTextColor"))
 
             Text(viewModel.desc)
                 .font(.subheadline)
-                .foregroundColor(Color("secondaryText"))
+                .foregroundColor(Color("secondaryTextColor"))
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 32)
