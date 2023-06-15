@@ -5,6 +5,7 @@
 //  Created by Adriano Valumin on 06/06/23.
 //
 
+import Combine
 import SwiftUI
 
 struct HabitCardView: View {
@@ -97,15 +98,8 @@ struct HabitCardView_Previews: PreviewProvider {
                                                             name: "Play Guitar",
                                                             label: "hours",
                                                             value: "2",
-                                                            state: .green))
-
-                HabitCardView(viewModel: HabitCardViewModel(id: 1,
-                                                            icon: "https://via.placeholder.com/150",
-                                                            date: "01/01/2023 00:00:00",
-                                                            name: "Play Guitar",
-                                                            label: "hours",
-                                                            value: "2",
-                                                            state: .green))
+                                                            state: .green,
+                                                            habitPublisher: PassthroughSubject<Bool, Never>()))
             }
             .frame(maxWidth: .infinity)
             .navigationTitle("Test")
