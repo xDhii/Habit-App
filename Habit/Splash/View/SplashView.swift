@@ -18,7 +18,7 @@ struct SplashView: View {
             case .goToSignInScreen:
                 viewModel.signInView()
             case .goToHomeScreen:
-                Text("Carregar tela principal")
+                viewModel.homeView()
             case let .error(errorMessage):
                 loadingView(error: errorMessage)
             }
@@ -29,7 +29,7 @@ struct SplashView: View {
 extension SplashView {
     func loadingView(error: String? = nil) -> some View {
         ZStack {
-            Image("logo")
+            Image("logoImage")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)

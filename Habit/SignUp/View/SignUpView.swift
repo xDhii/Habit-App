@@ -12,33 +12,37 @@ struct SignUpView: View {
 
     var body: some View {
         ZStack {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Cadastro")
-                            .foregroundColor(Color("primaryTitle"))
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 8)
+            ZStack(alignment: .top) {
+                Color("primaryBackgroundColor")
+                    .ignoresSafeArea()
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Cadastro")
+                                .foregroundColor(Color("primaryTitleColor"))
+                                .font(Font.system(.title).bold())
+                                .padding(.bottom, 8)
 
-                        fullNameField
-                        emailField
-                        passwordField
-                        documentField
-                        phoneField
-                        birthdayField
-                        genderField
-                        saveButton
-                    }
-                    Spacer()
-                }.padding(.horizontal, 8)
+                            fullNameField
+                            emailField
+                            passwordField
+                            documentField
+                            phoneField
+                            birthdayField
+                            genderField
+                            saveButton
+                        }
+                        Spacer()
+                    }.padding(.horizontal, 8)
 
-            }.padding()
+                }.padding()
 
-            if case let SignUpUIState.error(value) = viewModel.uiState {
-                Text("")
-                    .alert(isPresented: .constant(true)) {
-                        Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
-                    }
+                if case let SignUpUIState.error(value) = viewModel.uiState {
+                    Text("")
+                        .alert(isPresented: .constant(true)) {
+                            Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
+                        }
+                }
             }
         }
     }
@@ -47,9 +51,9 @@ struct SignUpView: View {
 extension SignUpView {
     var fullNameField: some View {
         EditTextView(text: $viewModel.fullName,
-                     placeholder: "Nome Completo",
+                     placeholder: "Full Name",
                      keyboard: .alphabet,
-                     error: "Digite seu nome completo",
+                     error: "Type your full name",
                      failure: viewModel.fullName.count < 3)
     }
 }
@@ -59,7 +63,7 @@ extension SignUpView {
         EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
-                     error: "E-mail inválido",
+                     error: "Invalid e-mail",
                      failure: !viewModel.email.isEmail())
     }
 }
@@ -67,9 +71,9 @@ extension SignUpView {
 extension SignUpView {
     var passwordField: some View {
         EditTextView(text: $viewModel.password,
-                     placeholder: "Senha",
+                     placeholder: "Password",
                      keyboard: .default,
-                     error: "Senha deve ter ao menos 8 caracteres",
+                     error: "Password should have at least 8 characters",
                      failure: viewModel.password.count < 8,
                      isSecure: true)
     }
@@ -80,7 +84,7 @@ extension SignUpView {
         EditTextView(text: $viewModel.document,
                      placeholder: "CPF",
                      keyboard: .numberPad,
-                     error: "CPF inválido",
+                     error: "Invalid CPF",
                      failure: viewModel.document.count != 11)
     }
 }
@@ -88,9 +92,9 @@ extension SignUpView {
 extension SignUpView {
     var phoneField: some View {
         EditTextView(text: $viewModel.phone,
-                     placeholder: "Celular",
+                     placeholder: "Phone",
                      keyboard: .numberPad,
-                     error: "Digite seu telefone com DDD",
+                     error: "Type your Phone number",
                      failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12)
     }
 }
@@ -98,9 +102,9 @@ extension SignUpView {
 extension SignUpView {
     var birthdayField: some View {
         EditTextView(text: $viewModel.birthday,
-                     placeholder: "Data de Nascimento",
+                     placeholder: "Birth date",
                      keyboard: .default,
-                     error: "Data de nascimento deve ser no formado dd/MM/yyyy",
+                     error: "Birthdate should have the format dd/MM/yyyy",
                      failure: viewModel.birthday.count != 10)
     }
 }
@@ -123,7 +127,7 @@ extension SignUpView {
         LoadingButtonView(action: {
                               viewModel.signUp()
                           },
-                          text: "Realizar Cadastro",
+                          text: "Sign Up",
                           disabled: !viewModel.email.isEmail() ||
                               viewModel.password.count < 8 ||
                               viewModel.fullName.count < 3 ||

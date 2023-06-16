@@ -19,40 +19,44 @@ struct SignInView: View {
                 viewModel.homeView()
             } else {
                 NavigationView {
-                    ScrollView(showsIndicators: true) {
-                        VStack(alignment: .center, spacing: 20) {
-                            Spacer(minLength: 36)
-                            VStack(alignment: .center, spacing: 8) {
-                                Image("logo")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding(.horizontal, 48)
+                    ZStack(alignment: .top) {
+                        Color("primaryBackgroundColor")
+                            .ignoresSafeArea()
+                        ScrollView(showsIndicators: true) {
+                            VStack(alignment: .center, spacing: 20) {
+                                Spacer(minLength: 36)
+                                VStack(alignment: .center, spacing: 8) {
+                                    Image("logoImage")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.horizontal, 48)
 
-                                Text("Login")
-                                    .foregroundColor(Color("primaryTitle"))
-                                    .font(Font.system(.title).bold())
-                                    .padding(.bottom, 8)
+                                    Text("Login")
+                                        .foregroundColor(Color("primaryTitleColor"))
+                                        .font(Font.system(.title).bold())
+                                        .padding(.bottom, 8)
 
-                                emailField
-                                passwordField
-                                enterButton
-                                registerLink
+                                    emailField
+                                    passwordField
+                                    enterButton
+                                    registerLink
+                                }
+                                .padding(.horizontal, 16)
+                            }
+
+                            if case let SignInUIState.error(value) = viewModel.uiState {
+                                Text("")
+                                    .alert(isPresented: .constant(true)) {
+                                        Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
+                                        })
+                                    }
                             }
                         }
-
-                        if case let SignInUIState.error(value) = viewModel.uiState {
-                            Text("")
-                                .alert(isPresented: .constant(true)) {
-                                    Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
-                                    })
-                                }
-                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.horizontal, 16)
+                        .navigationBarTitle("Login", displayMode: .inline)
+                        .navigationBarHidden(navigationHidden)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding(.horizontal, 32)
-                    .background(Color("primaryBackgroundColor"))
-                    .navigationBarTitle("Login", displayMode: .inline)
-                    .navigationBarHidden(navigationHidden)
                 }
             }
         }
@@ -64,7 +68,7 @@ extension SignInView {
         EditTextView(text: $viewModel.email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
-                     error: "E-mail inválido",
+                     error: "Invalid e-mail",
                      failure: !viewModel.email.isEmail())
     }
 }
@@ -72,9 +76,9 @@ extension SignInView {
 extension SignInView {
     var passwordField: some View {
         EditTextView(text: $viewModel.password,
-                     placeholder: "Senha",
+                     placeholder: "Password",
                      keyboard: .default,
-                     error: "Senha deve ter ao menos 8 caracteres",
+                     error: "Password should have at least 8 characters",
                      failure: viewModel.password.count < 8,
                      isSecure: true)
     }
@@ -84,9 +88,8 @@ extension SignInView {
     var enterButton: some View {
         LoadingButtonView(action: {
                               viewModel.login()
-
                           },
-                          text: "Entrar",
+                          text: "Sign In",
                           disabled: !viewModel.email.isEmail() || viewModel.password.count < 8,
                           showProgress: self.viewModel.uiState == SignInUIState.loading
         )
@@ -96,8 +99,8 @@ extension SignInView {
 extension SignInView {
     var registerLink: some View {
         VStack {
-            Text("Ainda não tem um cadastro?")
-                .foregroundColor(.gray)
+            Text("Don't have an account??")
+                .foregroundColor(Color("primaryTextColor"))
                 .padding(.top, 48)
 
             ZStack {
@@ -107,9 +110,9 @@ extension SignInView {
                     selection: $action,
                     label: { EmptyView() })
 
-                Button("Cadastre-se") {
+                Button("Sign Up") {
                     self.action = 1
-                }
+                }.accentColor(Color("primaryLinkColor"))
             }
         }
     }

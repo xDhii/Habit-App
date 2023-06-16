@@ -23,23 +23,23 @@ struct LoadingButtonView: View {
                     .padding(.vertical, 14)
                     .padding(.horizontal, 16)
                     .font(Font.system(.title3).bold())
-                    .foregroundColor(Color("primaryText"))
-                    .background(disabled ? Color("DisabledButton") : Color("PrimaryButton"))
-                    .cornerRadius(7.0)
+                    .foregroundColor(disabled ? Color("disabledButtonTextColor") : Color("enabledButtonTextColor"))
+                    .background(disabled ? Color("disabledButtonBackgroundColor") : Color("enabledPrimaryButtonBackgroundColor"))
+                    .cornerRadius(7)
             }).disabled(disabled || showProgress)
 
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
                 .opacity(showProgress ? 1 : 0)
-        }.padding()
+        }
     }
 }
 
 struct LoadingButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingButtonView(action: {
-        }, text: "Entrar",
-        disabled: false,
+        }, text: "Sign In",
+        disabled: true,
         showProgress: false)
     }
 }
