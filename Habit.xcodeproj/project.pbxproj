@@ -28,6 +28,7 @@
 		BC4F78952A36341D002EAD73 /* HabitCardViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F78942A36341D002EAD73 /* HabitCardViewRouter.swift */; };
 		BC83E8D529FDD70B0099129F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D429FDD70B0099129F /* WebService.swift */; };
 		BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E8D629FDE4700099129F /* SignUpRequest.swift */; };
+		BC842E392A3BD6CD007C80FE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC842E382A3BD6CD007C80FE /* ImageView.swift */; };
 		BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDC2A15890200A36986 /* SignUpResponse.swift */; };
 		BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC866EDE2A158DAB00A36986 /* ErrorResponse.swift */; };
 		BC98F6192A353A0E003EE3D4 /* HabitDetailUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98F6182A353A0E003EE3D4 /* HabitDetailUIState.swift */; };
@@ -88,6 +89,7 @@
 		BC4F78942A36341D002EAD73 /* HabitCardViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewRouter.swift; sourceTree = "<group>"; };
 		BC83E8D429FDD70B0099129F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BC83E8D629FDE4700099129F /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		BC842E382A3BD6CD007C80FE /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BC866EDC2A15890200A36986 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		BC866EDE2A158DAB00A36986 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		BC98F6182A353A0E003EE3D4 /* HabitDetailUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailUIState.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				BC277A992A2D53B400D4CFF6 /* Modifier */,
 				BCA92D8929F21880006903DB /* Style */,
 				BCA92D8729F20E87006903DB /* EditTextView.swift */,
+				BC842E382A3BD6CD007C80FE /* ImageView.swift */,
 				BCA92D8F29F33023006903DB /* LoadingButtonView.swift */,
 			);
 			path = View;
@@ -624,6 +627,7 @@
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
 				BC277A9B2A2D53DB00D4CFF6 /* ButtonStyle.swift in Sources */,
 				BC16349B29EDCB6600AA3AF9 /* Gender.swift in Sources */,
+				BC842E392A3BD6CD007C80FE /* ImageView.swift in Sources */,
 				BCEF13AA2A26BB8D00DCB705 /* HabitViewModel.swift in Sources */,
 				BCEF13A82A26BB5100DCB705 /* HabitView.swift in Sources */,
 				BCF377DB29E4E63F00E88A7E /* SplashView.swift in Sources */,
