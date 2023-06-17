@@ -28,7 +28,7 @@ struct HomeView: View {
                     Text("Charts")
                 }.tag(1)
             //          Profile Tab
-            Text("Profile Content \(selection)")
+            viewModel.profileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Profile")

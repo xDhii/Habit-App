@@ -51,6 +51,8 @@
 		BCEF13A82A26BB5100DCB705 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF13A72A26BB5100DCB705 /* HabitView.swift */; };
 		BCEF13AA2A26BB8D00DCB705 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF13A92A26BB8D00DCB705 /* HabitViewModel.swift */; };
 		BCEF13AC2A26C2D700DCB705 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF13AB2A26C2D700DCB705 /* HabitModel.swift */; };
+		BCF259D82A3D2FC800ACDF38 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF259D72A3D2FC800ACDF38 /* ProfileView.swift */; };
+		BCF259DA2A3D376500ACDF38 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF259D92A3D376500ACDF38 /* GenderSelectorView.swift */; };
 		BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF377C929E4E47700E88A7E /* HabitApp.swift */; };
 		BCF377CE29E4E47900E88A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF377CD29E4E47900E88A7E /* Assets.xcassets */; };
 		BCF377D129E4E47900E88A7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF377D029E4E47900E88A7E /* Preview Assets.xcassets */; };
@@ -112,6 +114,8 @@
 		BCEF13A72A26BB5100DCB705 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		BCEF13A92A26BB8D00DCB705 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		BCEF13AB2A26C2D700DCB705 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		BCF259D72A3D2FC800ACDF38 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BCF259D92A3D376500ACDF38 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 		BCF377C629E4E47700E88A7E /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF377C929E4E47700E88A7E /* HabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitApp.swift; sourceTree = "<group>"; };
 		BCF377CD29E4E47900E88A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -391,10 +395,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BCF259D32A3D2E9D00ACDF38 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BCF259D62A3D2EBF00ACDF38 /* View */,
+				BCF259D52A3D2EB000ACDF38 /* ViewModel */,
+				BCF259D42A3D2EAA00ACDF38 /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BCF259D42A3D2EAA00ACDF38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCF259D52A3D2EB000ACDF38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCF259D62A3D2EBF00ACDF38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCF259D72A3D2FC800ACDF38 /* ProfileView.swift */,
+				BCF259D92A3D376500ACDF38 /* GenderSelectorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BCF377BD29E4E47700E88A7E = {
 			isa = PBXGroup;
 			children = (
 				BCF377C829E4E47700E88A7E /* Habit */,
+				BCF377C929E4E47700E88A7E /* HabitApp.swift */,
+				BCF377CD29E4E47900E88A7E /* Assets.xcassets */,
 				BCF377C729E4E47700E88A7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -410,16 +449,15 @@
 		BCF377C829E4E47700E88A7E /* Habit */ = {
 			isa = PBXGroup;
 			children = (
-				BC98F6142A3539C6003EE3D4 /* HabitDetail */,
-				BCEF13A32A26BB0E00DCB705 /* Habit */,
 				BC16349829EDCB5100AA3AF9 /* Common */,
-				BCB4F03129EB77C8009FCD5C /* SignUp */,
+				BCEF13A32A26BB0E00DCB705 /* Habit */,
+				BC98F6142A3539C6003EE3D4 /* HabitDetail */,
 				BCB4F02929EB6FF9009FCD5C /* Home */,
-				BCF377EE29E8AD3F00E88A7E /* SignIn */,
-				BCF377D729E4E5C000E88A7E /* Splash */,
-				BCF377C929E4E47700E88A7E /* HabitApp.swift */,
-				BCF377CD29E4E47900E88A7E /* Assets.xcassets */,
 				BCF377CF29E4E47900E88A7E /* Preview Content */,
+				BCF259D32A3D2E9D00ACDF38 /* Profile */,
+				BCF377EE29E8AD3F00E88A7E /* SignIn */,
+				BCB4F03129EB77C8009FCD5C /* SignUp */,
+				BCF377D729E4E5C000E88A7E /* Splash */,
 			);
 			path = Habit;
 			sourceTree = "<group>";
@@ -603,6 +641,7 @@
 				BC1C6A0A2A37D6E300996E00 /* HabitDetailInteractor.swift in Sources */,
 				BCF377DD29E4E6F300E88A7E /* SplashUIState.swift in Sources */,
 				BCA92D9029F33023006903DB /* LoadingButtonView.swift in Sources */,
+				BCF259D82A3D2FC800ACDF38 /* ProfileView.swift in Sources */,
 				BC4C80892A200C7200CBB9FF /* LocalDataSource.swift in Sources */,
 				BCC250EC2A16E94900A7DFC0 /* SignInErrorResponse.swift in Sources */,
 				BC4C80872A200B1400CBB9FF /* UserAuth.swift in Sources */,
@@ -638,6 +677,7 @@
 				BC1C6A082A37D44A00996E00 /* HabitDetailRemoteDataSource.swift in Sources */,
 				BCEF13A22A26BAC800DCB705 /* HomeViewRouter.swift in Sources */,
 				BCA92D8829F20E87006903DB /* EditTextView.swift in Sources */,
+				BCF259DA2A3D376500ACDF38 /* GenderSelectorView.swift in Sources */,
 				BCF5B9242A32A4A900C69E5E /* HabitResponse.swift in Sources */,
 				BC83E8D729FDE4700099129F /* SignUpRequest.swift in Sources */,
 				BCF377F329E8B2C500E88A7E /* SignInViewModel.swift in Sources */,
