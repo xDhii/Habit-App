@@ -8,12 +8,12 @@
 import Foundation
 
 enum AppError: Error {
-    case response(message: String)
+  case response(message: String)
 
-    public var message: String {
-        switch self {
-        case let .response(message):
-            return message
-        }
+  public var message: String {
+    switch self {
+    case let .response(message):
+      return message
     }
+  }
 }

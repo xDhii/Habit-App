@@ -32,7 +32,7 @@ struct GenderSelectorView: View {
           }
         }
       }
-    }.navigationBarTitle(Text(""), displayMode: .inline )
+    }.navigationBarTitle(Text(""), displayMode: .inline)
   }
 }
 
