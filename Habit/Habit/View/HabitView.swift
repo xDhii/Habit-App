@@ -17,45 +17,48 @@ struct HabitView: View {
         progress
       } else {
         NavigationView {
-          ScrollView(showsIndicators: false) {
-            VStack(spacing: 12) {
-              topContainer
-              addButton
+          ZStack {
+            Color("primaryBackgroundColor").ignoresSafeArea()
+            ScrollView(showsIndicators: false) {
+              VStack(spacing: 12) {
+                topContainer
+                addButton
 
-              if case HabitUIState.emptyList = viewModel.uiState {
-                VStack {
-                  Spacer(minLength: 60)
+                if case HabitUIState.emptyList = viewModel.uiState {
+                  VStack {
+                    Spacer(minLength: 60)
 
-                  Image(systemName: "exclamationmark.octagon.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24, alignment: .center)
-                    .accentColor(Color("tabViewIconColor")) // TODO: Check why the color isn't being applied
+                    Image(systemName: "exclamationmark.octagon.fill")
+                      .resizable()
+                      .scaledToFit()
+                      .frame(width: 24, height: 24, alignment: .center)
+                      .accentColor(Color("tabViewIconColor")) // TODO: Check why the color isn't being applied
 
-                  Text("No habits found :(")
-                }
-
-              } else if case let HabitUIState.fullList(rows) = viewModel.uiState {
-                LazyVStack {
-                  ForEach(rows, content: HabitCardView.init(viewModel:))
-                }
-                .padding(.horizontal, 8)
-
-              } else if case let HabitUIState.error(msg) = viewModel.uiState {
-                Text("")
-                  .alert(isPresented: .constant(true)) {
-                    Alert(
-                      title: Text("Ops! \(msg)"),
-                      message: Text("An error occurred"),
-                      primaryButton: .default(Text("Try again")) {
-                        viewModel.onAppear()
-                      },
-                      secondaryButton: .cancel()
-                    )
+                    Text("No habits found :(")
                   }
+
+                } else if case let HabitUIState.fullList(rows) = viewModel.uiState {
+                  LazyVStack {
+                    ForEach(rows, content: HabitCardView.init(viewModel:))
+                  }
+                  .padding(.horizontal, 8)
+
+                } else if case let HabitUIState.error(msg) = viewModel.uiState {
+                  Text("")
+                    .alert(isPresented: .constant(true)) {
+                      Alert(
+                        title: Text("Ops! \(msg)"),
+                        message: Text("An error occurred"),
+                        primaryButton: .default(Text("Try again")) {
+                          viewModel.onAppear()
+                        },
+                        secondaryButton: .cancel()
+                      )
+                    }
+                }
               }
-            }
-          }.navigationTitle("My Habits")
+            }.navigationTitle("My Habits")
+          }
         }
       }
     }

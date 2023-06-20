@@ -68,9 +68,9 @@ struct ProfileView: View {
             }
           }
         }
-      }
 
-      .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
+        .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
+      }
     }
   }
 }

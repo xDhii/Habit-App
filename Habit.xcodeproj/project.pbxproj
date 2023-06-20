@@ -453,11 +453,11 @@
 				BCEF13A32A26BB0E00DCB705 /* Habit */,
 				BC98F6142A3539C6003EE3D4 /* HabitDetail */,
 				BCB4F02929EB6FF9009FCD5C /* Home */,
-				BCF377CF29E4E47900E88A7E /* Preview Content */,
 				BCF259D32A3D2E9D00ACDF38 /* Profile */,
 				BCF377EE29E8AD3F00E88A7E /* SignIn */,
 				BCB4F03129EB77C8009FCD5C /* SignUp */,
 				BCF377D729E4E5C000E88A7E /* Splash */,
+				BCF377CF29E4E47900E88A7E /* Preview Content */,
 			);
 			path = Habit;
 			sourceTree = "<group>";

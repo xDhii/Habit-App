@@ -15,6 +15,8 @@ struct HabitCardView: View {
 
   var body: some View {
     ZStack(alignment: .trailing) {
+      Color("secondaryBackgroundColor")
+        .cornerRadius(7)
       NavigationLink(
         destination: viewModel.habitDetailView(),
         isActive: self.$action,

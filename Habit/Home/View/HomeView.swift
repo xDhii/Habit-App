@@ -34,7 +34,6 @@ struct HomeView: View {
           Text("Profile")
         }.tag(2)
     }
-    .background(Color("secondaryBackgroundColor"))
     .accentColor(Color("tabViewIconColor"))
   }
 }
