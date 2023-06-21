@@ -42,7 +42,7 @@ struct HabitDetailView: View {
             .background(Color("enabledPrimaryButtonBackgroundColor").opacity(0.5))
             .padding(.bottom, 8)
         }).padding(.horizontal, 32)
-        Text("Checkpoints should be logged every 24h.")
+        Text("Checkpoints should be logged everyday.")
           .foregroundColor(Color("secondaryTextColor"))
 
         LoadingButtonView(action: {
