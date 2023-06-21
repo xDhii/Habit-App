@@ -17,63 +17,61 @@ struct ProfileView: View {
 
   var body: some View {
     NavigationView {
-      ZStack {
-        Color("primaryBackgroundColor")
-          .ignoresSafeArea()
-        VStack {
-          Form {
-            Section(header: Text("User data")) {
-              HStack {
-                Text("Name")
-                Spacer()
-                TextField("Insert your name", text: $fullName)
-                  .keyboardType(.alphabet)
-                  .multilineTextAlignment(.trailing)
-              }
-
-              HStack {
-                Text("E-mail")
-                Spacer()
-                TextField("", text: $email)
-                  .disabled(true)
-                  .foregroundColor(Color("disabledButtonTextColor"))
-                  .multilineTextAlignment(.trailing)
-              }
-
-              HStack {
-                Text("CPF")
-                TextField("", text: $cpf)
-                  .disabled(true)
-                  .foregroundColor(Color("disabledButtonTextColor"))
-                  .multilineTextAlignment(.trailing)
-              }
-
-              HStack {
-                Text("Phone")
-                TextField("Enter your phone number", text: $phone)
-                  .keyboardType(.numberPad)
-                  .multilineTextAlignment(.trailing)
-              }
-
-              HStack {
-                Text("Birthday")
-                TextField("Enter your birthday", text: $birthday)
-                  .multilineTextAlignment(.trailing)
-              }
-
-              NavigationLink(
-                destination: GenderSelectorView(selectedGender: $selectedGender,
-                                                title: "Select your gender",
-                                                genders: Gender.allCases)) {
-                Text("Gender")
-                Spacer()
-                Text(selectedGender?.rawValue ?? "")
-              }
+      VStack {
+        Form {
+          Section(header: Text("User data")) {
+            HStack {
+              Text("Name")
+              Spacer()
+              TextField("Insert your name", text: $fullName)
+                .keyboardType(.alphabet)
+                .multilineTextAlignment(.trailing)
             }
-          }.scrollContentBackground(.hidden)
 
-          .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
+            HStack {
+              Text("E-mail")
+              Spacer()
+              TextField("", text: $email)
+                .disabled(true)
+                .foregroundColor(Color("disabledButtonTextColor"))
+                .multilineTextAlignment(.trailing)
+            }
+
+            HStack {
+              Text("CPF")
+              TextField("", text: $cpf)
+                .disabled(true)
+                .foregroundColor(Color("disabledButtonTextColor"))
+                .multilineTextAlignment(.trailing)
+            }
+
+            HStack {
+              Text("Phone")
+              TextField("Enter your phone number", text: $phone)
+                .keyboardType(.numberPad)
+                .multilineTextAlignment(.trailing)
+            }
+
+            HStack {
+              Text("Birthday")
+              TextField("Enter your birthday", text: $birthday)
+                .multilineTextAlignment(.trailing)
+            }
+
+            NavigationLink(
+              destination: GenderSelectorView(selectedGender: $selectedGender,
+                                              title: "Select your gender",
+                                              genders: Gender.allCases)) {
+              Text("Gender")
+              Spacer()
+              Text(selectedGender?.rawValue ?? "")
+            }
+          }
         }
+        .background(Color("primaryBackgroundColor"))
+        .scrollContentBackground(.hidden)
+
+        .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
       }
     }
   }

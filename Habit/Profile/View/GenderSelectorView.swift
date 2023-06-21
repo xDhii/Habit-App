@@ -22,7 +22,7 @@ struct GenderSelectorView: View {
             Spacer()
             Image(systemName: "checkmark.circle")
               .foregroundColor(selectedGender == item ?
-                Color("enabledPrimaryButtonBackgroundColor") : Color("disabledButtonBackgroundColor"))
+                Color("checkmarkSelectedColor") : Color("checkmarkUnselectedColor"))
           }
           .contentShape(Rectangle())
           .onTapGesture {
@@ -32,7 +32,10 @@ struct GenderSelectorView: View {
           }
         }
       }
-    }.navigationBarTitle(Text(""), displayMode: .inline)
+    }
+    .background(Color("primaryBackgroundColor"))
+    .scrollContentBackground(.hidden)
+    .navigationBarTitle(Text(""), displayMode: .inline)
   }
 }
 
