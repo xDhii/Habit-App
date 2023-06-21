@@ -76,11 +76,20 @@ struct HabitCardView: View {
           }
 
           Spacer()
+
         }
         .padding()
         .cornerRadius(7)
 
       })
+      .background(alignment: .leading) {
+        ImageView(url: viewModel.icon)
+          .cornerRadius(7)
+          .scaledToFit()
+          .opacity(0.5)
+          .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
+          .padding(.trailing)
+      }
 
       Spacer()
       RoundedRectangle(cornerRadius: 7)
