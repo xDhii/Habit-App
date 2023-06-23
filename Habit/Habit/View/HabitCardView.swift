@@ -32,7 +32,8 @@ struct HabitCardView: View {
           if viewModel.icon != "" {
             ImageView(url: viewModel.icon)
               .aspectRatio(contentMode: .fill)
-              .frame(width: 32, height: 32)
+              .frame(width: 48, height: 48)
+              .cornerRadius(7)
               .clipped()
           } else {
             Image(systemName: "pencil")
@@ -92,8 +93,13 @@ struct HabitCardView: View {
       }
 
       Spacer()
-      RoundedRectangle(cornerRadius: 7)
-        .frame(width: 7)
+      Rectangle()
+        .frame(width: 10)
+        .clipShape(
+          .rect(
+            bottomTrailingRadius: 7,
+            topTrailingRadius: 7
+        ))
         .foregroundColor(viewModel.state)
 
     }.background(
