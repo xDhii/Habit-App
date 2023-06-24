@@ -9,11 +9,11 @@ import Combine
 import Foundation
 
 class HabitInteractor {
-    private let remote: HabitRemoteDataSource = .shared
+  private let remote: HabitRemoteDataSource = .shared
 }
 
 extension HabitInteractor {
-    func fetchHabits() -> Future<[HabitResponse], AppError> {
-        return remote.fetchHabits()
-    }
+  func fetchHabits() -> Future<[HabitResponse], AppError> {
+    return remote.fetchHabits()
+  }
 }

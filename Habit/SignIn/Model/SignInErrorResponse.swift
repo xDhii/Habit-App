@@ -8,17 +8,17 @@
 import Foundation
 
 struct SignInErrorResponse: Decodable {
-    let detail: SignInDetailErrorResponse
+  let detail: SignInDetailErrorResponse
 
-    enum CodingKeys: String, CodingKey {
-        case detail
-    }
+  enum CodingKeys: String, CodingKey {
+    case detail
+  }
 }
 
 struct SignInDetailErrorResponse: Decodable {
-    let message: String
+  let message: String
 
-    enum CodingKeys: String, CodingKey {
-        case message
-    }
+  enum CodingKeys: String, CodingKey {
+    case message
+  }
 }

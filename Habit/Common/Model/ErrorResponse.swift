@@ -8,9 +8,9 @@
 import Foundation
 
 struct ErrorResponse: Decodable {
-    let detail: String
+  let detail: String
 
-    enum CodingKeys: String, CodingKey {
-        case detail
-    }
+  enum CodingKeys: String, CodingKey {
+    case detail
+  }
 }

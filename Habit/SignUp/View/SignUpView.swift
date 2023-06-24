@@ -8,139 +8,139 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @ObservedObject var viewModel: SignUpViewModel
+  @ObservedObject var viewModel: SignUpViewModel
 
-    var body: some View {
-        ZStack {
-            ZStack(alignment: .top) {
-                Color("primaryBackgroundColor")
-                    .ignoresSafeArea()
-                ScrollView(showsIndicators: false) {
-                    VStack(alignment: .center) {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Cadastro")
-                                .foregroundColor(Color("primaryTitleColor"))
-                                .font(Font.system(.title).bold())
-                                .padding(.bottom, 8)
+  var body: some View {
+    ZStack {
+      ZStack(alignment: .top) {
+        Color("primaryBackgroundColor")
+          .ignoresSafeArea()
+        ScrollView(showsIndicators: false) {
+          VStack(alignment: .center) {
+            VStack(alignment: .leading, spacing: 8) {
+              Text("Cadastro")
+                .foregroundColor(Color("primaryTitleColor"))
+                .font(Font.system(.title).bold())
+                .padding(.bottom, 8)
 
-                            fullNameField
-                            emailField
-                            passwordField
-                            documentField
-                            phoneField
-                            birthdayField
-                            genderField
-                            saveButton
-                        }
-                        Spacer()
-                    }.padding(.horizontal, 8)
+              fullNameField
+              emailField
+              passwordField
+              documentField
+              phoneField
+              birthdayField
+              genderField
+              saveButton
+            }
+            Spacer()
+          }.padding(.horizontal, 8)
 
-                }.padding()
+        }.padding()
 
-                if case let SignUpUIState.error(value) = viewModel.uiState {
-                    Text("")
-                        .alert(isPresented: .constant(true)) {
-                            Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
-                        }
-                }
+        if case let SignUpUIState.error(value) = viewModel.uiState {
+          Text("")
+            .alert(isPresented: .constant(true)) {
+              Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")))
             }
         }
+      }
     }
+  }
 }
 
 extension SignUpView {
-    var fullNameField: some View {
-        EditTextView(text: $viewModel.fullName,
-                     placeholder: "Full Name",
-                     keyboard: .alphabet,
-                     error: "Type your full name",
-                     failure: viewModel.fullName.count < 3)
-    }
+  var fullNameField: some View {
+    EditTextView(text: $viewModel.fullName,
+                 placeholder: "Full Name",
+                 keyboard: .alphabet,
+                 error: "Type your full name",
+                 failure: viewModel.fullName.count < 3)
+  }
 }
 
 extension SignUpView {
-    var emailField: some View {
-        EditTextView(text: $viewModel.email,
-                     placeholder: "E-mail",
-                     keyboard: .emailAddress,
-                     error: "Invalid e-mail",
-                     failure: !viewModel.email.isEmail())
-    }
+  var emailField: some View {
+    EditTextView(text: $viewModel.email,
+                 placeholder: "E-mail",
+                 keyboard: .emailAddress,
+                 error: "Invalid e-mail",
+                 failure: !viewModel.email.isEmail())
+  }
 }
 
 extension SignUpView {
-    var passwordField: some View {
-        EditTextView(text: $viewModel.password,
-                     placeholder: "Password",
-                     keyboard: .default,
-                     error: "Password should have at least 8 characters",
-                     failure: viewModel.password.count < 8,
-                     isSecure: true)
-    }
+  var passwordField: some View {
+    EditTextView(text: $viewModel.password,
+                 placeholder: "Password",
+                 keyboard: .default,
+                 error: "Password should have at least 8 characters",
+                 failure: viewModel.password.count < 8,
+                 isSecure: true)
+  }
 }
 
 extension SignUpView {
-    var documentField: some View {
-        EditTextView(text: $viewModel.document,
-                     placeholder: "CPF",
-                     keyboard: .numberPad,
-                     error: "Invalid CPF",
-                     failure: viewModel.document.count != 11)
-    }
+  var documentField: some View {
+    EditTextView(text: $viewModel.document,
+                 placeholder: "CPF",
+                 keyboard: .numberPad,
+                 error: "Invalid CPF",
+                 failure: viewModel.document.count != 11)
+  }
 }
 
 extension SignUpView {
-    var phoneField: some View {
-        EditTextView(text: $viewModel.phone,
-                     placeholder: "Phone",
-                     keyboard: .numberPad,
-                     error: "Type your Phone number",
-                     failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12)
-    }
+  var phoneField: some View {
+    EditTextView(text: $viewModel.phone,
+                 placeholder: "Phone",
+                 keyboard: .numberPad,
+                 error: "Type your Phone number",
+                 failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12)
+  }
 }
 
 extension SignUpView {
-    var birthdayField: some View {
-        EditTextView(text: $viewModel.birthday,
-                     placeholder: "Birth date",
-                     keyboard: .default,
-                     error: "Birthdate should have the format dd/MM/yyyy",
-                     failure: viewModel.birthday.count != 10)
-    }
+  var birthdayField: some View {
+    EditTextView(text: $viewModel.birthday,
+                 placeholder: "Birth date",
+                 keyboard: .default,
+                 error: "Birthdate should have the format dd/MM/yyyy",
+                 failure: viewModel.birthday.count != 10)
+  }
 }
 
 extension SignUpView {
-    var genderField: some View {
-        Picker("Gender", selection: $viewModel.gender) {
-            ForEach(Gender.allCases, id: \.self) { value in
-                Text(value.rawValue)
-                    .tag(value)
-            }
-        }.pickerStyle(SegmentedPickerStyle())
-            .padding(.top, 16)
-            .padding(.bottom, 32)
-    }
+  var genderField: some View {
+    Picker("Gender", selection: $viewModel.gender) {
+      ForEach(Gender.allCases, id: \.self) { value in
+        Text(value.rawValue)
+          .tag(value)
+      }
+    }.pickerStyle(SegmentedPickerStyle())
+      .padding(.top, 16)
+      .padding(.bottom, 32)
+  }
 }
 
 extension SignUpView {
-    var saveButton: some View {
-        LoadingButtonView(action: {
-                              viewModel.signUp()
-                          },
-                          text: "Sign Up",
-                          disabled: !viewModel.email.isEmail() ||
-                              viewModel.password.count < 8 ||
-                              viewModel.fullName.count < 3 ||
-                              viewModel.document.count != 11 ||
-                              viewModel.phone.count < 10 || viewModel.phone.count >= 12 ||
-                              viewModel.birthday.count != 10,
-                          showProgress: self.viewModel.uiState == SignUpUIState.loading
-        )
-    }
+  var saveButton: some View {
+    LoadingButtonView(action: {
+                        viewModel.signUp()
+                      },
+                      text: "Sign Up",
+                      disabled: !viewModel.email.isEmail() ||
+                        viewModel.password.count < 8 ||
+                        viewModel.fullName.count < 3 ||
+                        viewModel.document.count != 11 ||
+                        viewModel.phone.count < 10 || viewModel.phone.count >= 12 ||
+                        viewModel.birthday.count != 10,
+                      showProgress: self.viewModel.uiState == SignUpUIState.loading
+    )
+  }
 }
 
 struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
-    }
+  static var previews: some View {
+    SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
+  }
 }
