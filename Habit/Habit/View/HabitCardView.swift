@@ -17,17 +17,23 @@ struct HabitCardView: View {
     ZStack(alignment: .trailing) {
       Color("secondaryBackgroundColor")
         .cornerRadius(7)
-      NavigationLink(
-        destination: viewModel.habitDetailView(),
-        isActive: self.$action,
-        label: {
-          EmptyView()
-        }
-      )
 
-      Button(action: {
-        self.action = true
-      }, label: {
+      NavigationLink(value: viewModel.id) {
+        EmptyView()
+      }
+
+      ZStack {
+        RoundedRectangle(cornerRadius: 7)
+          .stroke(Color("borderColor"), lineWidth: 0)
+          .background(alignment: .leading) {
+            ImageView(url: viewModel.icon)
+              .cornerRadius(7)
+              .scaledToFit()
+              .opacity(0.5)
+              .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
+              .padding(.trailing)
+          }
+
         HStack {
           if viewModel.icon != "" {
             ImageView(url: viewModel.icon)
@@ -77,21 +83,10 @@ struct HabitCardView: View {
           }
 
           Spacer()
-
         }
         .padding()
         .cornerRadius(7)
-
-      })
-      .background(alignment: .leading) {
-        ImageView(url: viewModel.icon)
-          .cornerRadius(7)
-          .scaledToFit()
-          .opacity(0.5)
-          .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
-          .padding(.trailing)
       }
-
       Spacer()
       Rectangle()
         .frame(width: 10)
@@ -99,7 +94,7 @@ struct HabitCardView: View {
           .rect(
             bottomTrailingRadius: 7,
             topTrailingRadius: 7
-        ))
+          ))
         .foregroundColor(viewModel.state)
 
     }.background(
@@ -112,9 +107,18 @@ struct HabitCardView: View {
   }
 }
 
+//  .background(alignment: .leading) {
+//    ImageView(url: viewModel.icon)
+//      .cornerRadius(7)
+//      .scaledToFit()
+//      .opacity(0.5)
+//      .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
+//      .padding(.trailing)
+//  }
+
 struct HabitCardView_Previews: PreviewProvider {
   static var previews: some View {
-    NavigationView {
+    NavigationStack {
       List {
         HabitCardView(viewModel: HabitCardViewModel(id: 1,
                                                     icon: "https://via.placeholder.com/150",
@@ -127,6 +131,9 @@ struct HabitCardView_Previews: PreviewProvider {
       }
       .frame(maxWidth: .infinity)
       .navigationTitle("Test")
+      .navigationDestination(for: Int.self) { id in
+        Text("destination id: \(id)")
+      }
     }
   }
 }
