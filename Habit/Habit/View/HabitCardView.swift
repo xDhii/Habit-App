@@ -107,15 +107,6 @@ struct HabitCardView: View {
   }
 }
 
-//  .background(alignment: .leading) {
-//    ImageView(url: viewModel.icon)
-//      .cornerRadius(7)
-//      .scaledToFit()
-//      .opacity(0.5)
-//      .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
-//      .padding(.trailing)
-//  }
-
 struct HabitCardView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationStack {
