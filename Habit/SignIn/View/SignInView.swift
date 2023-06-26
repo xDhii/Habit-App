@@ -104,6 +104,7 @@ extension SignInView {
         .padding(.top, 48)
 
       ZStack {
+               
         NavigationLink(
           destination: viewModel.signUpView(),
           tag: 1,
