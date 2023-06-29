@@ -32,7 +32,7 @@ struct HabitView: View {
                       .resizable()
                       .scaledToFit()
                       .frame(width: 24, height: 24, alignment: .center)
-                      .accentColor(Color("tabViewIconColor")) // TODO: Check why the color isn't being applied
+                      .accentColor(Color("primaryIconColor")) // TODO: Check why the color isn't being applied
 
                     Text("No habits found :(")
                   }
@@ -77,6 +77,7 @@ extension HabitView {
         .resizable()
         .scaledToFit()
         .frame(width: 50, height: 50, alignment: .center)
+        .foregroundColor(Color("primaryTextColor"))
 
       Text(viewModel.title)
         .font(.title.bold())
