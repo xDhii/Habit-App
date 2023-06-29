@@ -10,6 +10,12 @@ import SwiftUI
 struct ProfileView: View {
   @ObservedObject var viewModel: ProfileViewModel
 
+  var disableDone: Bool {
+    viewModel.fullNameValidation.failure ||
+      viewModel.phoneValidation.failure ||
+      viewModel.birthdayValidation.failure
+  }
+
   @State var fullName: String = ""
   @State var email: String = "test@test.com"
   @State var cpf: String = "000.111.222-33"
@@ -107,6 +113,12 @@ struct ProfileView: View {
         .scrollContentBackground(.hidden)
 
         .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
+        .navigationBarItems(trailing: Button(action: {}, label: {
+          Image(systemName: "checkmark")
+            .foregroundColor(Color("enabledPrimaryButtonBackgroundColor"))
+        })
+        .opacity(disableDone ? 0 : 1)
+        )
       }
     }
   }
