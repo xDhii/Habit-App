@@ -17,9 +17,7 @@ struct ProfileView: View {
   }
 
   var body: some View {
-    
     ZStack {
-      
       if case ProfileUIState.loading = viewModel.uiState {
         ProgressView()
       } else {
@@ -34,7 +32,7 @@ struct ProfileView: View {
                     .keyboardType(.alphabet)
                     .multilineTextAlignment(.trailing)
                 }
-                
+
                 if viewModel.fullNameValidation.failure {
                   Text("Name should have at least 3 characters")
                     .padding(.horizontal, 8)
@@ -45,7 +43,7 @@ struct ProfileView: View {
                       .stroke(Color("errorColor"), lineWidth: 1)
                     )
                 }
-                
+
                 HStack {
                   Text("E-mail")
                   Spacer()
@@ -54,7 +52,7 @@ struct ProfileView: View {
                     .foregroundColor(Color("disabledButtonTextColor"))
                     .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                   Text("CPF")
                   TextField("", text: $viewModel.document)
@@ -62,14 +60,14 @@ struct ProfileView: View {
                     .foregroundColor(Color("disabledButtonTextColor"))
                     .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                   Text("Phone")
                   TextField("Enter your phone number", text: $viewModel.phoneValidation.value)
                     .keyboardType(.numberPad)
                     .multilineTextAlignment(.trailing)
                 }
-                
+
                 if viewModel.phoneValidation.failure {
                   Text("Invalid phone number")
                     .padding(.horizontal, 8)
@@ -80,13 +78,13 @@ struct ProfileView: View {
                       .stroke(Color("errorColor"), lineWidth: 1)
                     )
                 }
-                
+
                 HStack {
                   Text("Birthday")
                   TextField("Enter your birthday", text: $viewModel.birthdayValidation.value)
                     .multilineTextAlignment(.trailing)
                 }
-                
+
                 if viewModel.phoneValidation.failure {
                   Text("Birthday should be dd/MM/yyyy")
                     .padding(.horizontal, 8)
@@ -97,44 +95,42 @@ struct ProfileView: View {
                       .stroke(Color("errorColor"), lineWidth: 1)
                     )
                 }
-                
+
                 NavigationLink(
                   destination: GenderSelectorView(selectedGender: $viewModel.gender,
                                                   title: "Select your gender",
                                                   genders: Gender.allCases)) {
-                                                    HStack {
-                                                      Text("Gender")
-                                                      Spacer()
-                                                      Text(viewModel.gender?.rawValue ?? "")
-                                                    }
-
-                                                  }
+                  HStack {
+                    Text("Gender")
+                    Spacer()
+                    Text(viewModel.gender?.rawValue ?? "")
+                  }
+                }
               }
             }
             .background(Color("primaryBackgroundColor"))
             .scrollContentBackground(.hidden)
-            
+
             .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
             .navigationBarItems(trailing: Button(action: {}, label: {
               Image(systemName: "checkmark")
                 .foregroundColor(Color("secondaryIconColor"))
             })
-              .opacity(disableDone ? 0 : 1)
+            .opacity(disableDone ? 0 : 1)
             )
           }
         }
       }
-      if case ProfileUIState.fetchError(let value) = viewModel.uiState {
+      if case let ProfileUIState.fetchError(value) = viewModel.uiState {
         Text("")
           .alert(isPresented: .constant(true), content: {
             Alert(title: Text("Habit"),
                   message: Text(value),
                   dismissButton: .default(Text("Ok")) {
-              
-            })
+                  })
           })
       }
-      
+
     }.onAppear(perform: viewModel.fetchUser)
   }
 }

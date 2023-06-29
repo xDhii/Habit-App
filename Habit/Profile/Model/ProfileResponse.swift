@@ -15,7 +15,7 @@ struct ProfileResponse: Decodable {
   let phone: String
   let birthday: String
   let gender: Int
-  
+
   enum CodingKeys: String, CodingKey {
     case id
     case fullName = "name"
