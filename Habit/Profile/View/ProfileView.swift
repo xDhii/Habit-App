@@ -123,32 +123,32 @@ struct ProfileView: View {
               }
 
             })
-              .alert(isPresented: .constant(viewModel.uiState == .updateSuccess)) {
-                Alert(title: Text("Habit"),
-                      message: Text("User profile updated successfully"),
-                      dismissButton: .default(Text("Ok")) {
-                  viewModel.uiState = .none
-                }
-                )
-              }
+            .alert(isPresented: .constant(viewModel.uiState == .updateSuccess)) {
+              Alert(title: Text("Habit"),
+                    message: Text("User profile updated successfully"),
+                    dismissButton: .default(Text("Ok")) {
+                      viewModel.uiState = .none
+                    }
+              )
+            }
             .opacity(disableDone ? 0 : 1)
             )
           }
         }
       }
-      
-      if case ProfileUIState.updateError(let value) = viewModel.uiState {
+
+      if case let ProfileUIState.updateError(value) = viewModel.uiState {
         Text("")
           .alert(isPresented: .constant(true)) {
             Alert(title: Text("Habit"),
                   message: Text(value),
                   dismissButton: .default(Text("Ok")) {
-              viewModel.uiState = .none
-            }
+                    viewModel.uiState = .none
+                  }
             )
           }
       }
-      
+
       if case let ProfileUIState.fetchError(value) = viewModel.uiState {
         Text("")
           .alert(isPresented: .constant(true), content: {

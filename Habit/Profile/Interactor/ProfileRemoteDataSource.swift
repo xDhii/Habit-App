@@ -38,32 +38,31 @@ class ProfileRemoteDataSource {
       }
     }
   }
-  
+
   func updateUser(userId: Int, request profileRequest: ProfileRequest) -> Future<ProfileResponse, AppError> {
     return Future { promise in
       let path = String(format: WebService.Endpoint.updateUser.rawValue, userId)
       WebService.call(path: path, method: .put, body: profileRequest) { result in
         switch result {
-          case .failure(_, let data):
-            if let data = data {
-              let decoder = JSONDecoder()
-              let response = try? decoder.decode(ErrorResponse.self, from: data)
-              promise(.failure(AppError.response(message: response?.detail ?? "Unknown Error")))
-            }
-            break
-            
-          case .success(let data):
+        case let .failure(_, data):
+          if let data = data {
             let decoder = JSONDecoder()
-            let response = try? decoder.decode(ProfileResponse.self, from: data)
-            
-            guard let res = response else {
-              return
-            }
-            promise(.success(res))
-            break
+            let response = try? decoder.decode(ErrorResponse.self, from: data)
+            promise(.failure(AppError.response(message: response?.detail ?? "Unknown Error")))
+          }
+          break
+
+        case let .success(data):
+          let decoder = JSONDecoder()
+          let response = try? decoder.decode(ProfileResponse.self, from: data)
+
+          guard let res = response else {
+            return
+          }
+          promise(.success(res))
+          break
         }
       }
     }
   }
-  
 }

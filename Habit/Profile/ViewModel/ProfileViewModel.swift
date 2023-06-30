@@ -73,47 +73,46 @@ class ProfileViewModel: ObservableObject {
 
       })
   }
-  
+
   func updateUser() {
-    self.uiState = .updateLoading
+    uiState = .updateLoading
     guard let userId = userId,
           let gender = gender else { return }
-    
+
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "en_US_POSIX")
     formatter.dateFormat = "dd/MM/yyyy"
-    
+
     let dateFormatted = formatter.date(from: birthdayValidation.value)
-    
+
     guard let dateFormatted = dateFormatted else {
-      self.uiState = .updateError("Invalid date \(birthdayValidation.value)")
+      uiState = .updateError("Invalid date \(birthdayValidation.value)")
       return
     }
-    
+
     formatter.dateFormat = "yyyy-MM-dd"
     let birthday = formatter.string(from: dateFormatted)
-    
+
     cancellableUpdate = interactor.updateUser(userId: userId,
                                               profileRequest: ProfileRequest(fullName: fullNameValidation.value,
                                                                              phone: phoneValidation.value,
                                                                              birthday: birthday,
                                                                              gender: gender.index))
-    
-    .receive(on: DispatchQueue.main)
-    .sink(receiveCompletion: { completion in
-      switch(completion) {
-        case .failure(let appError):
+
+      .receive(on: DispatchQueue.main)
+      .sink(receiveCompletion: { completion in
+        switch completion {
+        case let .failure(appError):
           self.uiState = .updateError(appError.message)
           break
         case .finished:
           break
-      }
-    }, receiveValue: { response in
-      self.uiState = .updateSuccess
-      
-    })
+        }
+      }, receiveValue: { _ in
+        self.uiState = .updateSuccess
+
+      })
   }
-  
 }
 
 class FullNameValidation: ObservableObject {
