@@ -44,6 +44,7 @@
 		BCA92D8B29F2189B006903DB /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8A29F2189B006903DB /* CustomTextFieldStyle.swift */; };
 		BCA92D8E29F32C29006903DB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8D29F32C29006903DB /* String+Extension.swift */; };
 		BCA92D9029F33023006903DB /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92D8F29F33023006903DB /* LoadingButtonView.swift */; };
+		BCB2D0E82A4F0E9900D5D236 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D0E72A4F0E9900D5D236 /* ProfileRequest.swift */; };
 		BCB392092A15A399000EDD89 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB392082A15A399000EDD89 /* SignInRequest.swift */; };
 		BCB3920B2A15A4C8000EDD89 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB3920A2A15A4C8000EDD89 /* SignInResponse.swift */; };
 		BCB4F02829EB6FD7009FCD5C /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */; };
@@ -112,6 +113,7 @@
 		BCA92D8A29F2189B006903DB /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		BCA92D8D29F32C29006903DB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		BCA92D8F29F33023006903DB /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
+		BCB2D0E72A4F0E9900D5D236 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		BCB392082A15A399000EDD89 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		BCB3920A2A15A4C8000EDD89 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		BCB4F02729EB6FD7009FCD5C /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			children = (
 				BC6D3CFE2A4E355B00BE9294 /* ProfileResponse.swift */,
 				BC6D3D052A4E3C8C00BE9294 /* ProfileUIState.swift */,
+				BCB2D0E72A4F0E9900D5D236 /* ProfileRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				BC98F6192A353A0E003EE3D4 /* HabitDetailUIState.swift in Sources */,
 				BCF5B9272A32A67300C69E5E /* HabitRemoteDataSource.swift in Sources */,
 				BCF377CA29E4E47700E88A7E /* HabitApp.swift in Sources */,
+				BCB2D0E82A4F0E9900D5D236 /* ProfileRequest.swift in Sources */,
 				BC866EDF2A158DAB00A36986 /* ErrorResponse.swift in Sources */,
 				BC277A9B2A2D53DB00D4CFF6 /* ButtonStyle.swift in Sources */,
 				BC6D3D022A4E3A1800BE9294 /* ProfileRemoteDataSource.swift in Sources */,

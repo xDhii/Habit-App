@@ -112,15 +112,43 @@ struct ProfileView: View {
             .scrollContentBackground(.hidden)
 
             .navigationBarTitle(Text("Edit Profile"), displayMode: .automatic)
-            .navigationBarItems(trailing: Button(action: {}, label: {
-              Image(systemName: "checkmark")
-                .foregroundColor(Color("secondaryIconColor"))
+            .navigationBarItems(trailing: Button(action: {
+              viewModel.updateUser()
+            }, label: {
+              if case ProfileUIState.updateLoading = viewModel.uiState {
+                ProgressView()
+              } else {
+                Image(systemName: "checkmark")
+                  .foregroundColor(Color("secondaryIconColor"))
+              }
+
             })
+              .alert(isPresented: .constant(viewModel.uiState == .updateSuccess)) {
+                Alert(title: Text("Habit"),
+                      message: Text("User profile updated successfully"),
+                      dismissButton: .default(Text("Ok")) {
+                  viewModel.uiState = .none
+                }
+                )
+              }
             .opacity(disableDone ? 0 : 1)
             )
           }
         }
       }
+      
+      if case ProfileUIState.updateError(let value) = viewModel.uiState {
+        Text("")
+          .alert(isPresented: .constant(true)) {
+            Alert(title: Text("Habit"),
+                  message: Text(value),
+                  dismissButton: .default(Text("Ok")) {
+              viewModel.uiState = .none
+            }
+            )
+          }
+      }
+      
       if case let ProfileUIState.fetchError(value) = viewModel.uiState {
         Text("")
           .alert(isPresented: .constant(true), content: {
