@@ -53,7 +53,7 @@ extension SignUpView {
     EditTextView(text: $viewModel.fullName,
                  placeholder: "Full Name",
                  keyboard: .alphabet,
-                 error: "Type your full name",
+                 error: "Enter your full name",
                  failure: viewModel.fullName.count < 3)
   }
 }
@@ -94,7 +94,7 @@ extension SignUpView {
     EditTextView(text: $viewModel.phone,
                  placeholder: "Phone",
                  keyboard: .numberPad,
-                 error: "Type your Phone number",
+                 error: "Enter your Phone number",
                  failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12)
   }
 }
@@ -104,7 +104,7 @@ extension SignUpView {
     EditTextView(text: $viewModel.birthday,
                  placeholder: "Birth date",
                  keyboard: .default,
-                 error: "Birthdate should have the format dd/MM/yyyy",
+                 error: "Birthday should be dd/MM/yyyy",
                  failure: viewModel.birthday.count != 10)
   }
 }

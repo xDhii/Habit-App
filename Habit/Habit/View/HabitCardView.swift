@@ -1,18 +1,18 @@
-//
-//  HabitCardView.swift
-//  Habit
-//
-//  Created by Adriano Valumin on 06/06/23.
-//
+  //
+  //  HabitCardView.swift
+  //  Habit
+  //
+  //  Created by Adriano Valumin on 06/06/23.
+  //
 
 import Combine
 import SwiftUI
 
 struct HabitCardView: View {
   @State private var action = false
-
+  
   let viewModel: HabitCardViewModel
-
+  
   var body: some View {
     ZStack(alignment: .trailing) {
       Color("secondaryBackgroundColor")
@@ -24,7 +24,7 @@ struct HabitCardView: View {
           EmptyView()
         }
       )
-
+      
       Button(action: {
         self.action = true
       }, label: {
@@ -39,49 +39,49 @@ struct HabitCardView: View {
             Image(systemName: "pencil")
               .padding(.horizontal, 8)
           }
-
+          
           Spacer()
-
+          
           HStack(alignment: .top) {
             Spacer()
-
+            
             VStack(alignment: .leading, spacing: 4) {
               Text(viewModel.name)
                 .foregroundColor(Color("primaryTextColor"))
                 .bold()
-
+              
               Text(viewModel.label)
                 .foregroundColor(Color("secondaryTextColor"))
                 .bold()
-
+              
               Text(viewModel.date)
                 .foregroundColor(Color("secondaryTextColor"))
                 .bold()
             }.frame(maxWidth: 300, alignment: .leading)
-
+            
             Spacer()
-
+            
             VStack(alignment: .leading, spacing: 4) {
               Text("Registered")
                 .foregroundColor(Color("primaryTextColor"))
                 .bold()
                 .multilineTextAlignment(.leading)
-
+              
               Text(viewModel.value)
                 .foregroundColor(Color("secondaryTextColor"))
                 .bold()
                 .multilineTextAlignment(.leading)
             }
-
+            
             Spacer()
           }
-
+          
           Spacer()
-
+          
         }
         .padding()
         .cornerRadius(7)
-
+        
       })
       .background(alignment: .leading) {
         ImageView(url: viewModel.icon)
@@ -91,7 +91,7 @@ struct HabitCardView: View {
           .mask(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .leading, endPoint: .trailing))
           .padding(.trailing)
       }
-
+      
       Spacer()
       Rectangle()
         .frame(width: 10)
@@ -99,9 +99,9 @@ struct HabitCardView: View {
           .rect(
             bottomTrailingRadius: 7,
             topTrailingRadius: 7
-        ))
+          ))
         .foregroundColor(viewModel.state)
-
+      
     }.background(
       RoundedRectangle(cornerRadius: 7)
         .stroke(Color("borderColor"), lineWidth: 1.0)

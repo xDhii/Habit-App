@@ -12,6 +12,8 @@ enum WebService {
     case base = "https://habitplus-api.tiagoaguiar.co"
 
     case postUser = "/users"
+    case fetchUser = "/users/me"
+    case updateUser = "/users/%d"
     case login = "/auth/login"
     case refreshToken = "/auth/refresh-token"
     case habits = "/users/me/habits"
