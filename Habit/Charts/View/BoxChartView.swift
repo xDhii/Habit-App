@@ -22,7 +22,10 @@ struct BoxChartView: UIViewRepresentable {
     uiView.xAxis.granularity = 1
     uiView.xAxis.labelPosition = .bottom
     uiView.rightAxis.enabled = false
-    uiView.leftAxis.axisLineColor = .red
+    uiView.leftAxis.axisLineColor = UIColor(named: "chartAxisLineColor")!
+    uiView.xAxis.axisLineColor = UIColor(named: "chartAxisLineColor")!
+    uiView.pinchZoomEnabled = false
+    uiView.doubleTapToZoomEnabled = false
     uiView.animate(yAxisDuration: 0.7)
 
     uiView.data = addData()
@@ -34,7 +37,8 @@ struct BoxChartView: UIViewRepresentable {
   }
 
   func addData() -> LineChartData {
-    let colors = [UIColor.white.cgColor, UIColor.orange.cgColor]
+    let colors = [UIColor(named: "fillTopGradientColor")?.cgColor,
+                  UIColor(named: "fillBottomGradientColor")?.cgColor]
     let colorSpace = CGColorSpaceCreateDeviceRGB()
     let colorLocations: [CGFloat] = [0, 1]
 
@@ -47,10 +51,10 @@ struct BoxChartView: UIViewRepresentable {
     dataSet.mode = .cubicBezier
     dataSet.lineWidth = 2
     dataSet.circleRadius = 4
-    dataSet.setColor(.orange)
+    dataSet.setColor(UIColor(named: "chartLineColor")!)
     dataSet.drawFilledEnabled = true
-    dataSet.circleColors = [.red]
-    dataSet.valueColors = [.blue]
+    dataSet.circleColors = [UIColor(named: "chartCircleColor")!]
+    dataSet.valueColors = [UIColor(named: "chartValueColor")!]
     dataSet.drawHorizontalHighlightIndicatorEnabled = false
     dataSet.fill = LinearGradientFill(gradient: gradient, angle: 90.0)
 

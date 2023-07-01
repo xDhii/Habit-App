@@ -12,8 +12,11 @@ struct ChartView: View {
   @ObservedObject var viewModel: ChartViewModel
 
   var body: some View {
-    BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates)
-      .frame(maxWidth: .infinity, maxHeight: 350)
+    ZStack {
+      Color("primaryBackgroundColor").edgesIgnoringSafeArea(.all)
+      BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates)
+        .frame(maxWidth: .infinity, maxHeight: 350)
+    }
   }
 }
 
