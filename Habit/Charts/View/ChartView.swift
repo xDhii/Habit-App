@@ -9,7 +9,25 @@ import SwiftUI
 
 struct ChartView: View {
   var body: some View {
-    Text("Hello")
+    TestView()
+      .frame(maxWidth: .infinity,
+             maxHeight: 40,
+             alignment: .leading)
+      .background(Color.red)
+  }
+}
+
+struct TestView: UIViewRepresentable {
+  typealias UIViewType = UILabel
+
+  func makeUIView(context: Context) -> UILabel {
+    let lb = UILabel()
+    lb.backgroundColor = UIColor.red
+    lb.text = "Hello 2"
+    return lb
+  }
+
+  func updateUIView(_ uiView: UILabel, context: Context) {
   }
 }
 
