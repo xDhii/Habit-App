@@ -13,7 +13,7 @@ struct ChartView: View {
 
   var body: some View {
     ZStack {
-      Color("primaryBackgroundColor").edgesIgnoringSafeArea(.all)
+      Color("primaryBackgroundColor").ignoresSafeArea()
       BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates)
         .frame(maxWidth: .infinity, maxHeight: 350)
     }
