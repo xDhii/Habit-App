@@ -6,6 +6,6 @@ target 'Habit' do
   use_frameworks!
 
   # Pods for Habit
-  pod 'Charts', '3.6.0'
+  pod 'Charts', '~> 4.1'
 
 end
