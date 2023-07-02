@@ -14,10 +14,12 @@ struct HabitView: View {
   var body: some View {
     ZStack {
       if case HabitUIState.loading = viewModel.uiState {
+        Color("primaryBackgroundColor").ignoresSafeArea()
         progress
       } else {
         NavigationView {
           ZStack {
+            Color("primaryBackgroundColor").ignoresSafeArea()
             ScrollView(showsIndicators: false) {
               VStack(spacing: 12) {
                 if !viewModel.isCharts {
