@@ -19,6 +19,7 @@ struct ProfileView: View {
   var body: some View {
     ZStack {
       if case ProfileUIState.loading = viewModel.uiState {
+        Color("primaryBackgroundColor").ignoresSafeArea()
         ProgressView()
       } else {
         NavigationView {

@@ -14,6 +14,7 @@ struct HabitView: View {
   var body: some View {
     ZStack {
       if case HabitUIState.loading = viewModel.uiState {
+        Color("primaryBackgroundColor").ignoresSafeArea()
         progress
       } else {
         NavigationView {
@@ -21,8 +22,10 @@ struct HabitView: View {
             Color("primaryBackgroundColor").ignoresSafeArea()
             ScrollView(showsIndicators: false) {
               VStack(spacing: 12) {
-                topContainer
-                addButton
+                if !viewModel.isCharts {
+                  topContainer
+                  addButton
+                }
 
                 if case HabitUIState.emptyList = viewModel.uiState {
                   VStack {
@@ -32,14 +35,16 @@ struct HabitView: View {
                       .resizable()
                       .scaledToFit()
                       .frame(width: 24, height: 24, alignment: .center)
-                      .accentColor(Color("primaryIconColor")) // TODO: Check why the color isn't being applied
+                      .accentColor(Color("primaryIconColor"))
 
                     Text("No habits found :(")
                   }
 
                 } else if case let HabitUIState.fullList(rows) = viewModel.uiState {
                   LazyVStack {
-                    ForEach(rows, content: HabitCardView.init(viewModel:))
+                    ForEach(rows) { row in
+                      HabitCardView(isChart: viewModel.isCharts, viewModel: row)
+                    }
                   }
                   .padding(.horizontal, 8)
 
@@ -121,6 +126,6 @@ extension HabitView {
 
 struct HabitView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeViewRouter.makeHabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
+    HomeViewRouter.makeHabitView(viewModel: HabitViewModel(isCharts: false, interactor: HabitInteractor()))
   }
 }
