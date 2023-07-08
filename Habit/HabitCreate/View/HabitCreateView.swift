@@ -27,7 +27,7 @@ struct HabitCreateView: View {
             self.shouldPresentCamera = true
           } label: {
             VStack {
-              Image(systemName: "camera.fill")
+              viewModel.image!
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
@@ -40,6 +40,13 @@ struct HabitCreateView: View {
 
         })
         .padding(.bottom, 12)
+        .sheet(isPresented: $shouldPresentCamera, content: {
+          ImagePickerView(isPresented: $shouldPresentCamera,
+                          image: self.$viewModel.image,
+                          imageData: self.$viewModel.imageData,
+                          sourceType: .camera)
+
+        })
 
         VStack(content: {
           TextField("Insert your new habit name", text: $viewModel.name)

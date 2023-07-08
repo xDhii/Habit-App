@@ -84,6 +84,7 @@
 		BCF979272A5999130073B249 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979262A5999130073B249 /* HabitCreateView.swift */; };
 		BCF979292A5999D80073B249 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */; };
 		BCF9792B2A59AABC0073B249 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */; };
+		BCF9792D2A59F7190073B249 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9792C2A59F7190073B249 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +168,7 @@
 		BCF979262A5999130073B249 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
+		BCF9792C2A59F7190073B249 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 				BCA92D8729F20E87006903DB /* EditTextView.swift */,
 				BC842E382A3BD6CD007C80FE /* ImageView.swift */,
 				BCA92D8F29F33023006903DB /* LoadingButtonView.swift */,
+				BCF9792C2A59F7190073B249 /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				BCC250EC2A16E94900A7DFC0 /* SignInErrorResponse.swift in Sources */,
 				BC4C80872A200B1400CBB9FF /* UserAuth.swift in Sources */,
 				BCA92D8E29F32C29006903DB /* String+Extension.swift in Sources */,
+				BCF9792D2A59F7190073B249 /* ImagePicker.swift in Sources */,
 				BCB392092A15A399000EDD89 /* SignInRequest.swift in Sources */,
 				BCA92D8529EE1BE2006903DB /* SignUpViewRouter.swift in Sources */,
 				BCF377F729E8B2D900E88A7E /* SignInView.swift in Sources */,
