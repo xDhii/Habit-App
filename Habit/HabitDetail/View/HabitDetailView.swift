@@ -46,11 +46,13 @@ struct HabitDetailView: View {
           .foregroundColor(Color("secondaryTextColor"))
 
         LoadingButtonView(action: {
-          viewModel.save()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            viewModel.save()
+          }
         }, text: "Save",
         disabled: self.viewModel.value.isEmpty,
         showProgress: self.viewModel.uiState == .loading)
-          .padding(.horizontal, 16)
+          .padding(.horizontal, 12)
           .padding(.vertical, 8)
 
         Button("Cancel") {
@@ -61,7 +63,7 @@ struct HabitDetailView: View {
           }
         }
         .modifier(ButtonStyle())
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 12)
 
         Spacer()
       })
