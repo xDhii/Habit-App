@@ -54,7 +54,8 @@ extension SignUpView {
                  placeholder: "Full Name",
                  keyboard: .alphabet,
                  error: "Enter your full name",
-                 failure: viewModel.fullName.count < 3)
+                 failure: viewModel.fullName.count < 3,
+                 autoCapitalization: .words)
   }
 }
 

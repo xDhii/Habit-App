@@ -31,7 +31,7 @@ struct HabitView: View {
                   VStack {
                     Spacer(minLength: 60)
 
-                    Image(systemName: "exclamationmark.octagon.fill")
+                    viewModel.habitStatusIcon
                       .resizable()
                       .scaledToFit()
                       .frame(width: 24, height: 24, alignment: .center)
@@ -78,7 +78,7 @@ struct HabitView: View {
 extension HabitView {
   var topContainer: some View {
     VStack(alignment: .center, spacing: 12) {
-      Image(systemName: "exclamationmark.triangle")
+      viewModel.habitStatusIcon
         .resizable()
         .scaledToFit()
         .frame(width: 50, height: 50, alignment: .center)
