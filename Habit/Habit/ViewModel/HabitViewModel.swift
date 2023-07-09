@@ -14,6 +14,7 @@ class HabitViewModel: ObservableObject {
   @Published var title: String = ""
   @Published var headline: String = ""
   @Published var desc: String = ""
+  @Published var habitStatusIcon = Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
   @Published var opened: Bool = false
 
   private var cancellableRequest: AnyCancellable?
@@ -54,6 +55,7 @@ class HabitViewModel: ObservableObject {
           self.title = ""
           self.headline = "Watch out!"
           self.desc = "You still don't have any Habits"
+          self.habitStatusIcon = Image(systemName: "questionmark.circle")
         } else {
           self.uiState = .fullList(
             response.map {
@@ -64,6 +66,7 @@ class HabitViewModel: ObservableObject {
               self.title = "Congrats!"
               self.headline = "You're up to date"
               self.desc = ""
+              self.habitStatusIcon = Image(systemName: "checkmark.circle")
 
               let dateToCompare = $0.lastDate?.toDate(sourcePatterns: "yyyy-MM-dd'T'HH:mm:ss") ?? Date()
               if dateToCompare < Date() {
@@ -71,6 +74,7 @@ class HabitViewModel: ObservableObject {
                 self.title = "Hey"
                 self.headline = "Watch out!"
                 self.desc = "You're late on your Habits!"
+                self.habitStatusIcon = Image("exclamationmark.triangle")
               }
 
               return HabitCardViewModel(id: $0.id,
