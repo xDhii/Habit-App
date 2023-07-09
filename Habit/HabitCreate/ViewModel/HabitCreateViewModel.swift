@@ -20,9 +20,9 @@ class HabitCreateViewModel: ObservableObject {
   var cancellables = Set<AnyCancellable>()
   var habitPublisher: PassthroughSubject<Bool, Never>?
 
-  let interactor: HabitDetailInteractor
+  let interactor: HabitCreateInteractor
 
-  init(interactor: HabitDetailInteractor) {
+  init(interactor: HabitCreateInteractor) {
     self.interactor = interactor
   }
 
@@ -35,5 +35,22 @@ class HabitCreateViewModel: ObservableObject {
 
   func save() {
     uiState = .loading
+
+    cancellable = interactor.save(habitCreateRequest: HabitCreateRequest(imageData: imageData,
+                                                                         name: name,
+                                                                         label: label))
+      .receive(on: DispatchQueue.main)
+      .sink(receiveCompletion: { completion in
+        switch completion {
+        case let .failure(appError):
+          self.uiState = .error(appError.message)
+          break
+        case .finished:
+          break
+        }
+      }, receiveValue: {
+        self.uiState = .success
+        self.habitPublisher?.send(true)
+      })
   }
 }

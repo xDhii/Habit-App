@@ -95,10 +95,6 @@ struct HabitCreateView: View {
 
 struct HabitCreateView_Previews: PreviewProvider {
   static var previews: some View {
-    HabitCreateView(viewModel: HabitCreateViewModel(interactor: HabitDetailInteractor()))
-//    HabitDetailView(viewModel: HabitDetailViewModel(id: 1,
-//                                                    name: "Play Guitar",
-//                                                    label: "Hours",
-//                                                    interactor: HabitDetailInteractor()))
+    HabitCreateView(viewModel: HabitCreateViewModel(interactor: HabitCreateInteractor()))
   }
 }
