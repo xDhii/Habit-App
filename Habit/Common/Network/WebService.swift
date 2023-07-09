@@ -143,7 +143,7 @@ enum WebService {
                           completion: @escaping (Result) -> Void) {
     guard let urlRequest = completeUrl(path: path.rawValue) else { return }
     guard let absoluteUrl = urlRequest.url?.absoluteString else { return }
-    var components = URLComponents(string: absoluteUrl)
+    var components = URLComponents(string: absoluteUrl) 
     components?.queryItems = params
 
     let boundary = "Boundary-\(NSUUID().uuidString)"

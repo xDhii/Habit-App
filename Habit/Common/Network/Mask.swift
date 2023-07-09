@@ -27,8 +27,8 @@ class Mask {
     var cpfWithMask = ""
     
     var _mask = mask
-    if (_mask == "(##) ####-####)") {
-      if (value.count >= 14 || value.characterAtIndex(index: 5) == "9") {
+    if (_mask == "(##) ####-####") {
+      if (value.count >= 14 && value.characterAtIndex(index: 5) == "9") {
         _mask = "(##) #####-####"
       }
     }
@@ -66,7 +66,7 @@ class Mask {
     
     isUpdating = true
     
-    if (cpfWithMask == "(0)") {
+    if (cpfWithMask == "(0") {
       text = ""
       return
     }

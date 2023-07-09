@@ -64,9 +64,10 @@ struct ProfileView: View {
 
                 HStack {
                   Text("Phone")
-                  TextField("Enter your phone number", text: $viewModel.phoneValidation.value)
-                    .keyboardType(.numberPad)
-                    .multilineTextAlignment(.trailing)
+                  ProfileEditTextView(text: $viewModel.phoneValidation.value,
+                                      placeholder: "Enter your phone number",
+                                      mask: "(##) ####-####",
+                                      keyboard: .numberPad)
                 }
 
                 if viewModel.phoneValidation.failure {
@@ -82,11 +83,13 @@ struct ProfileView: View {
 
                 HStack {
                   Text("Birthday")
-                  TextField("Enter your birthday", text: $viewModel.birthdayValidation.value)
-                    .multilineTextAlignment(.trailing)
+                  ProfileEditTextView(text: $viewModel.birthdayValidation.value,
+                                      placeholder: "Enter your birthday",
+                                      mask: "##/##/####",
+                                      keyboard: .numberPad)
                 }
 
-                if viewModel.phoneValidation.failure {
+                if viewModel.birthdayValidation.failure {
                   Text("Birthday should be dd/MM/yyyy")
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
