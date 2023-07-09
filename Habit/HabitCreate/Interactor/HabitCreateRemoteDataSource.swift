@@ -19,7 +19,7 @@ class HabitCreateRemoteDataSource {
       WebService.call(path: .habits, params: [
         URLQueryItem(name: "name", value: request.name),
         URLQueryItem(name: "label", value: request.label),
-      ]) { result in
+      ], data: request.imageData) { result in
         switch result {
         case let .failure(error, data):
           if let data = data {
@@ -30,7 +30,7 @@ class HabitCreateRemoteDataSource {
             }
           }
           break
-        case let .success:
+        case .success:
           promise(.success(()))
           break
         }
