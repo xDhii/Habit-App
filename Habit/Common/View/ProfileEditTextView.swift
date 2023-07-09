@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileEditTextView: View {
   @Binding var text: String
+  
   var placeholder: String = ""
   var mask: String? = nil
   var keyboard: UIKeyboardType = .default
@@ -20,11 +21,11 @@ struct ProfileEditTextView: View {
         .keyboardType(keyboard)
         .autocapitalization(autoCapitalization)
         .multilineTextAlignment(.trailing)
-        .onChange(of: text, perform: { value in
+        .onChange(of: text) { value in
           if let mask = mask {
             Mask.mask(mask: mask, value: value, text: &text)
           }
-        })
+        }
     }
     .padding(.bottom, 10)
     .padding(.horizontal, 2)
