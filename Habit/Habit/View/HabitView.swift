@@ -31,7 +31,7 @@ struct HabitView: View {
                   VStack {
                     Spacer(minLength: 60)
 
-                    Image(systemName: "exclamationmark.octagon.fill")
+                    viewModel.habitStatusIcon
                       .resizable()
                       .scaledToFit()
                       .frame(width: 24, height: 24, alignment: .center)
@@ -41,7 +41,7 @@ struct HabitView: View {
                   }
 
                 } else if case let HabitUIState.fullList(rows) = viewModel.uiState {
-                  LazyVStack {
+                  VStack {
                     ForEach(rows) { row in
                       HabitCardView(isChart: viewModel.isCharts, viewModel: row)
                     }
@@ -78,7 +78,7 @@ struct HabitView: View {
 extension HabitView {
   var topContainer: some View {
     VStack(alignment: .center, spacing: 12) {
-      Image(systemName: "exclamationmark.triangle")
+      viewModel.habitStatusIcon
         .resizable()
         .scaledToFit()
         .frame(width: 50, height: 50, alignment: .center)
@@ -109,7 +109,7 @@ extension HabitView {
 extension HabitView {
   var addButton: some View {
     NavigationLink(
-      destination: Text("Screen to add")
+      destination: viewModel.habitCreateView()
         .frame(maxWidth: .infinity, maxHeight: .infinity)) {
       Label("Create Habit", systemImage: "plus.app")
         .modifier(ButtonStyle())
