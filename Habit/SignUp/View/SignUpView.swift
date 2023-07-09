@@ -84,9 +84,10 @@ extension SignUpView {
   var documentField: some View {
     EditTextView(text: $viewModel.document,
                  placeholder: "CPF",
+                 mask: "###.###.###-##",
                  keyboard: .numberPad,
                  error: "Invalid CPF",
-                 failure: viewModel.document.count != 11)
+                 failure: viewModel.document.count != 14)
   }
 }
 
@@ -94,9 +95,10 @@ extension SignUpView {
   var phoneField: some View {
     EditTextView(text: $viewModel.phone,
                  placeholder: "Phone",
+                 mask: "(##) ####-####)",
                  keyboard: .numberPad,
                  error: "Enter your Phone number",
-                 failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12)
+                 failure: viewModel.phone.count < 14 || viewModel.phone.count >= 15)
   }
 }
 
@@ -104,7 +106,8 @@ extension SignUpView {
   var birthdayField: some View {
     EditTextView(text: $viewModel.birthday,
                  placeholder: "Birth date",
-                 keyboard: .default,
+                 mask: "##/##/####",
+                 keyboard: .numberPad,
                  error: "Birthday should be dd/MM/yyyy",
                  failure: viewModel.birthday.count != 10)
   }
@@ -132,8 +135,8 @@ extension SignUpView {
                       disabled: !viewModel.email.isEmail() ||
                         viewModel.password.count < 8 ||
                         viewModel.fullName.count < 3 ||
-                        viewModel.document.count != 11 ||
-                        viewModel.phone.count < 10 || viewModel.phone.count >= 12 ||
+                        viewModel.document.count != 14 ||
+                        viewModel.phone.count < 14 || viewModel.phone.count >= 15 ||
                         viewModel.birthday.count != 10,
                       showProgress: self.viewModel.uiState == SignUpUIState.loading
     )

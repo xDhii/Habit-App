@@ -26,7 +26,7 @@ class SignInRemoteDataSource {
             if error == .unauthorized {
               let decoder = JSONDecoder()
               let response = try? decoder.decode(SignInErrorResponse.self, from: data)
-              promise(.failure(AppError.response(message: response?.detail.message ?? "Unknown Error")))
+              promise(.failure(AppError.response(message: response?.detail.message ?? "Unknown Server Error")))
             }
           }
           break

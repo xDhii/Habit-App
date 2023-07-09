@@ -25,7 +25,7 @@ class SignUpRemoteDataSource {
             if error == .badRequest {
               let decoder = JSONDecoder()
               let response = try? decoder.decode(ErrorResponse.self, from: data)
-              promise(.failure(AppError.response(message: response?.detail ?? "Unknown Error")))
+              promise(.failure(AppError.response(message: response?.detail ?? "Unknown Server Error")))
             }
           }
           break

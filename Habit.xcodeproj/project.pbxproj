@@ -84,6 +84,7 @@
 		BCF5B9272A32A67300C69E5E /* HabitRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5B9262A32A67300C69E5E /* HabitRemoteDataSource.swift */; };
 		BCF5B9292A32A91900C69E5E /* HabitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5B9282A32A91900C69E5E /* HabitInteractor.swift */; };
 		BCF5B92B2A32B1CB00C69E5E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5B92A2A32B1CB00C69E5E /* Date+Extension.swift */; };
+		BCF96DB52A5B59A10019DCF2 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96DB42A5B59A10019DCF2 /* Mask.swift */; };
 		BCF979272A5999130073B249 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979262A5999130073B249 /* HabitCreateView.swift */; };
 		BCF979292A5999D80073B249 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */; };
 		BCF9792B2A59AABC0073B249 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */; };
@@ -171,6 +172,7 @@
 		BCF5B9262A32A67300C69E5E /* HabitRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRemoteDataSource.swift; sourceTree = "<group>"; };
 		BCF5B9282A32A91900C69E5E /* HabitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInteractor.swift; sourceTree = "<group>"; };
 		BCF5B92A2A32B1CB00C69E5E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		BCF96DB42A5B59A10019DCF2 /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
 		BCF979262A5999130073B249 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		BC16349829EDCB5100AA3AF9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BCF96DB32A5B59940019DCF2 /* Util */,
 				BC83E8D329FDD6EA0099129F /* Network */,
 				BCA92D8C29F32BF5006903DB /* Lang */,
 				BCA92D8629F20E70006903DB /* View */,
@@ -295,6 +298,7 @@
 			children = (
 				BC83E8D429FDD70B0099129F /* WebService.swift */,
 				BC4C80882A200C7200CBB9FF /* LocalDataSource.swift */,
+				BCF96DB42A5B59A10019DCF2 /* Mask.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -692,6 +696,13 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		BCF96DB32A5B59940019DCF2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		BCF979222A5998DD0073B249 /* HabitCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +855,7 @@
 				BC41E1082A2FF4F1007C42A1 /* HabitCardView.swift in Sources */,
 				BC866EDD2A15890200A36986 /* SignUpResponse.swift in Sources */,
 				BCF979292A5999D80073B249 /* HabitCreateViewModel.swift in Sources */,
+				BCF96DB52A5B59A10019DCF2 /* Mask.swift in Sources */,
 				BCF377F929E8B6E300E88A7E /* SplashViewRouter.swift in Sources */,
 				BC4C80802A1ECD6500CBB9FF /* AppError.swift in Sources */,
 				BC4C80902A23E13900CBB9FF /* SplashRemoteDataSource.swift in Sources */,
