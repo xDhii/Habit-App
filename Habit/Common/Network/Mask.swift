@@ -27,7 +27,7 @@ class Mask {
     var cpfWithMask = ""
     
     var _mask = mask
-    if (_mask == "(##) ####-####)") {
+    if (_mask == "(##) ####-####") {
       if (value.count >= 14 && value.characterAtIndex(index: 5) == "9") {
         _mask = "(##) #####-####"
       }
