@@ -10,6 +10,7 @@ import SwiftUI
 struct EditTextView: View {
   @Binding var text: String
   var placeholder: String = ""
+  var mask: String? = nil
   var keyboard: UIKeyboardType = .default
   var error: String? = nil
   var failure: Bool? = nil
@@ -28,6 +29,11 @@ struct EditTextView: View {
           .keyboardType(keyboard)
           .autocapitalization(autoCapitalization)
           .textFieldStyle(CustomTextFieldStyle())
+          .onChange(of: text, perform: { value in
+            if let mask = mask {
+              Mask.mask(mask: mask, value: value, text: &text)
+            }
+          })
       }
       if let error = error, failure == true, !text.isEmpty {
         Text(error).padding(.horizontal, 8)
