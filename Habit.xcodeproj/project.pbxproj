@@ -85,6 +85,7 @@
 		BCF5B9292A32A91900C69E5E /* HabitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5B9282A32A91900C69E5E /* HabitInteractor.swift */; };
 		BCF5B92B2A32B1CB00C69E5E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5B92A2A32B1CB00C69E5E /* Date+Extension.swift */; };
 		BCF96DB52A5B59A10019DCF2 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96DB42A5B59A10019DCF2 /* Mask.swift */; };
+		BCF96DB72A5B64A10019DCF2 /* ProfileEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96DB62A5B64A10019DCF2 /* ProfileEditTextView.swift */; };
 		BCF979272A5999130073B249 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979262A5999130073B249 /* HabitCreateView.swift */; };
 		BCF979292A5999D80073B249 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */; };
 		BCF9792B2A59AABC0073B249 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */; };
@@ -173,6 +174,7 @@
 		BCF5B9282A32A91900C69E5E /* HabitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInteractor.swift; sourceTree = "<group>"; };
 		BCF5B92A2A32B1CB00C69E5E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BCF96DB42A5B59A10019DCF2 /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
+		BCF96DB62A5B64A10019DCF2 /* ProfileEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditTextView.swift; sourceTree = "<group>"; };
 		BCF979262A5999130073B249 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		BCF979282A5999D80073B249 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		BCF9792A2A59AABC0073B249 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				BC842E382A3BD6CD007C80FE /* ImageView.swift */,
 				BCA92D8F29F33023006903DB /* LoadingButtonView.swift */,
 				BCF9792C2A59F7190073B249 /* ImagePicker.swift */,
+				BCF96DB62A5B64A10019DCF2 /* ProfileEditTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				BC4C80892A200C7200CBB9FF /* LocalDataSource.swift in Sources */,
 				BCC250EC2A16E94900A7DFC0 /* SignInErrorResponse.swift in Sources */,
 				BC4C80872A200B1400CBB9FF /* UserAuth.swift in Sources */,
+				BCF96DB72A5B64A10019DCF2 /* ProfileEditTextView.swift in Sources */,
 				BCA92D8E29F32C29006903DB /* String+Extension.swift in Sources */,
 				BCF9792D2A59F7190073B249 /* ImagePicker.swift in Sources */,
 				BCB392092A15A399000EDD89 /* SignInRequest.swift in Sources */,
