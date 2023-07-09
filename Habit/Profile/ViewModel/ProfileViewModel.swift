@@ -130,7 +130,7 @@ class PhoneValidation: ObservableObject {
 
   var value: String = "11999999999" {
     didSet {
-      failure = value.count < 14 || value.count >= 15
+      failure = value.count < 14 || value.count > 15
     }
   }
 }
