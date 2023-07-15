@@ -96,8 +96,8 @@ extension HabitView {
         .font(.subheadline)
         .foregroundColor(Color("secondaryTextColor"))
     }
-    .frame(maxWidth: .infinity)
-    .padding(.vertical, 32)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .padding(.vertical, 12)
     .overlay(
       RoundedRectangle(cornerRadius: 7)
         .stroke(Color("borderColor"), lineWidth: 1))
