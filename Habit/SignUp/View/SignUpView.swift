@@ -95,7 +95,7 @@ extension SignUpView {
   var phoneField: some View {
     EditTextView(text: $viewModel.phone,
                  placeholder: "Phone",
-                 mask: "(##) ####-####)",
+                 mask: "(##) ####-####",
                  keyboard: .numberPad,
                  error: "Enter your Phone number",
                  failure: viewModel.phone.count < 14 || viewModel.phone.count >= 15)
@@ -129,7 +129,9 @@ extension SignUpView {
 extension SignUpView {
   var saveButton: some View {
     LoadingButtonView(action: {
-                        viewModel.signUp()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                          viewModel.signUp()
+                        }
                       },
                       text: "Sign Up",
                       disabled: !viewModel.email.isEmail() ||

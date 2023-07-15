@@ -14,7 +14,7 @@ class HabitViewModel: ObservableObject {
   @Published var title: String = ""
   @Published var headline: String = ""
   @Published var desc: String = ""
-  @Published var habitStatusIcon = Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
+    @Published var habitStatusIcon: Image = Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
   @Published var opened: Bool = false
 
   private var cancellableRequest: AnyCancellable?
@@ -74,7 +74,8 @@ class HabitViewModel: ObservableObject {
                 self.title = "Hey"
                 self.headline = "Watch out!"
                 self.desc = "You're late on your Habits!"
-                self.habitStatusIcon = Image("exclamationmark.triangle")
+                self.habitStatusIcon = Image(systemName: "exclamationmark.triangle")
+                  
               }
 
               return HabitCardViewModel(id: $0.id,

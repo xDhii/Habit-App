@@ -23,7 +23,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
   func makeUIViewController(context: Context) -> UIImagePickerController {
     let pickerController = UIImagePickerController()
 
-    if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+    if !UIImagePickerController.isSourceTypeAvailable(sourceType) {
       pickerController.sourceType = .photoLibrary
     } else {
       pickerController.sourceType = sourceType
