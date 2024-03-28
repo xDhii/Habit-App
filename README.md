@@ -13,25 +13,6 @@
 	<!-- default option, no dependency badges. -->
 </p>
 
-<br><!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary><br>
-
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Repository Structure](#-repository-structure)
-- [ Modules](#-modules)
-- [ Getting Started](#-getting-started)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-  - [ Tests](#-tests)
-- [ Project Roadmap](#-project-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
-</details>
-<hr>
-
 ##  Overview
 
 The Habit-App project is an iOS application designed to help users establish and maintain healthy habits. Leveraging SwiftUI and dynamic frameworks for seamless integration, the app provides a visually appealing and intuitive platform for users to track and monitor their habits and profiles. The core functionalities include creating and displaying habits and profiles, utilizing HomeViewModel and ProfileViewModel for data interaction. The Home module, managed by HomeViewModel and HomeViewRouter, offers a comprehensive view of habits, charts, and profiles, enhancing the user experience. By encapsulating dependency management through Podfile integration, the Habit-App project simplifies the process of habit tracking and promotes the cultivation of positive lifestyle changes.
@@ -1304,14 +1285,5 @@ Contributions are welcome! Here are several ways you can contribute:
    </a>
 </p>
 </details>
-
----
-
-##  License
-
-This project is protected under the MIT License
-
-
-[**Return**](#-overview)
 
 ---
